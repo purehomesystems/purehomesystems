@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react'
+import { useMemo, useState, useEffect, useRef } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { products as catalogProducts } from '../data/products'
 import Seo from '../seo/Seo'
@@ -542,6 +542,7 @@ function SuccessState({ name, selectedProducts, recommendationSchema }) {
 export default function GetRecommendation() {
   const [searchParams] = useSearchParams()
   const validSlugs = useMemo(() => new Set(catalogProducts.map((p) => p.slug)), [])
+  const formCardRef = useRef(null)
 
   // Product selection
   const [selectedProductSlugs, setSelectedProductSlugs] = useState(() => {
@@ -627,13 +628,19 @@ export default function GetRecommendation() {
     return e
   }
 
+  function scrollToForm() {
+    if (!formCardRef.current) return
+    const top = formCardRef.current.getBoundingClientRect().top + window.scrollY - 88
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
+  }
+
   function goToStep(step) {
     setErrors({})
     setTransitioning(true)
     setTimeout(() => {
       setCurrentStep(step)
       setTransitioning(false)
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      scrollToForm()
     }, 150)
   }
 
@@ -724,7 +731,7 @@ export default function GetRecommendation() {
           {/* Right: Stepped form */}
           <div>
             <form onSubmit={handleSubmit} noValidate>
-              <div className="bg-white border border-border rounded-3xl p-8 sm:p-10">
+              <div ref={formCardRef} className="bg-white border border-border rounded-3xl p-8 sm:p-10">
                 <StepBar current={currentStep} total={3} />
 
                 {/* Step content with fade transition */}

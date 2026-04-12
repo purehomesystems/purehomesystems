@@ -24,14 +24,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Column 1: Brand */}
-          <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
+          <div className="flex flex-col gap-4 items-center sm:items-start sm:col-span-2 lg:col-span-1">
             <Link to="/">
               <img src="/purehome-logo.png" alt="PureHome Systems" className="h-16 w-auto" />
             </Link>
-            <p className="text-sm text-charcoal-muted leading-relaxed">
+            <p className="text-sm text-charcoal-muted leading-relaxed text-center sm:text-left">
               Clean water, pure air, and elevated comfort. Delivered to your home with care.
             </p>
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-1.5 items-center sm:items-start">
               <a
                 href="mailto:alex@getpurehomesystems.com"
                 className="text-sm text-charcoal-muted hover:text-charcoal transition-colors"
@@ -48,18 +48,18 @@ export default function Footer() {
                 href="https://maps.google.com/?q=1590+Los+Padres+Blvd,+Santa+Clara,+CA+95050"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-charcoal-muted hover:text-charcoal transition-colors"
+                className="text-sm text-charcoal-muted hover:text-charcoal transition-colors text-center sm:text-left"
               >
                 1590 Los Padres Blvd, Santa Clara, CA 95050
               </a>
-              <p className="text-xs text-charcoal-muted">Showroom by appointment. Ask for Alex.</p>
+              <p className="text-xs text-charcoal-muted text-center sm:text-left">Showroom by appointment. Ask for Alex.</p>
             </div>
           </div>
 
           {/* Column 2: Navigation */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 items-center sm:items-start">
             <p className="section-label">Navigation</p>
-            <nav aria-label="Footer navigation" className="flex flex-col gap-2">
+            <nav aria-label="Footer navigation" className="flex flex-col gap-2 items-center sm:items-start">
               {navLinks.map(({ to, label }) => (
                 <Link
                   key={to}
@@ -73,9 +73,9 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Trust & Contact */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 items-center sm:items-start">
             <p className="section-label">Trust & Contact</p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 items-center sm:items-start">
               <Link to="/author" className="text-sm text-charcoal-muted hover:text-charcoal transition-colors">
                 Our Team
               </Link>
@@ -123,14 +123,14 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Popular Guides */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 items-center sm:items-start">
             <p className="section-label">Popular Guides</p>
-            <nav aria-label="Popular guides" className="flex flex-col gap-2">
+            <nav aria-label="Popular guides" className="flex flex-col gap-2 items-center sm:items-start">
               {popularGuides.map(({ to, label }) => (
                 <Link
                   key={to}
                   to={to}
-                  className="text-sm text-charcoal-muted hover:text-charcoal transition-colors leading-snug"
+                  className="text-sm text-charcoal-muted hover:text-charcoal transition-colors leading-snug text-center sm:text-left"
                 >
                   {label}
                 </Link>

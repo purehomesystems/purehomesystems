@@ -23,7 +23,7 @@ export default function ProductCard({ product }) {
           <img
             src={product.images[0]}
             alt={product.name}
-            className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-contain p-3 sm:p-6 transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
         ) : (
@@ -32,39 +32,39 @@ export default function ProductCard({ product }) {
           </div>
         )}
         {hasDiscount && (
-          <div className="absolute top-3 left-3 bg-charcoal text-white text-xs font-medium px-2 py-1 rounded-full">
+          <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-charcoal text-white text-[10px] sm:text-xs font-medium px-2 py-0.5 sm:py-1 rounded-full">
             Save {formatPrice(savings)}
           </div>
         )}
         {product.badge && (
-          <div className="absolute top-3 right-3 bg-accent-blue text-white text-xs font-medium px-2.5 py-1 rounded-full">
+          <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-accent-blue text-white text-[10px] sm:text-xs font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full">
             {product.badge}
           </div>
         )}
       </div>
 
       {/* Info */}
-      <div className="flex flex-col gap-3 p-5 border-t border-border">
+      <div className="flex flex-col gap-2 sm:gap-3 p-3 sm:p-5 border-t border-border">
         <div>
-          <p className="section-label mb-1">{categoryLabels[product.category] || product.category}</p>
-          <h3 className="text-sm font-semibold text-charcoal leading-snug line-clamp-2">
+          <p className="section-label mb-0.5 sm:mb-1">{categoryLabels[product.category] || product.category}</p>
+          <h3 className="text-xs sm:text-sm font-semibold text-charcoal leading-snug line-clamp-2">
             {product.name}
           </h3>
           {product.model && (
-            <p className="text-xs text-charcoal-muted mt-0.5">{product.model}</p>
+            <p className="text-[10px] sm:text-xs text-charcoal-muted mt-0.5">{product.model}</p>
           )}
         </div>
 
-        <div className="flex items-center justify-between pt-3 border-t border-border">
-          <div className="flex items-baseline gap-2">
-            <span className="text-sm font-semibold text-charcoal">{formatPrice(product.price)}</span>
+        <div className="flex items-center justify-between pt-2 sm:pt-3 border-t border-border">
+          <div className="flex items-baseline gap-1.5 sm:gap-2">
+            <span className="text-xs sm:text-sm font-semibold text-charcoal">{formatPrice(product.price)}</span>
             {hasDiscount && (
-              <span className="text-xs text-charcoal-muted line-through">{formatPrice(product.comparePrice)}</span>
+              <span className="hidden sm:inline text-xs text-charcoal-muted line-through">{formatPrice(product.comparePrice)}</span>
             )}
           </div>
-          <span className="text-xs text-charcoal-muted group-hover:text-charcoal transition-colors flex items-center gap-1">
-            Learn more
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-0.5">
+          <span className="text-[10px] sm:text-xs text-charcoal-muted group-hover:text-charcoal transition-colors flex items-center gap-0.5 sm:gap-1">
+            <span className="hidden xs:inline sm:inline">Learn more</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-0.5">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </span>

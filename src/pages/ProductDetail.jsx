@@ -20,7 +20,7 @@ function RentalTable({ label, rows }) {
     <div>
       <p className="text-xs font-semibold text-charcoal mb-2">{label}</p>
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[340px] text-xs">
+        <table className="w-full min-w-[280px] text-xs">
           <thead>
             <tr className="border-b border-border">
               <th className="text-left py-2 pr-4 font-medium text-charcoal-muted">Term</th>
@@ -85,7 +85,7 @@ function RentalPlansSection({ slug }) {
         {isSingle && (
           <div>
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[340px] text-xs">
+              <table className="w-full min-w-[280px] text-xs">
                 <thead>
                   <tr className="border-b border-border">
                     <th className="text-left py-2 pr-4 font-medium text-charcoal-muted">Term</th>
@@ -214,27 +214,27 @@ export default function ProductDetail() {
 
       {/* Breadcrumb */}
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-5">
-        <nav className="flex items-center gap-2 text-sm text-charcoal-muted">
-          <Link to="/products" className="hover:text-charcoal transition-colors">Products</Link>
-          <span>/</span>
+        <nav className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs sm:text-sm text-charcoal-muted">
+          <Link to="/products" className="hover:text-charcoal transition-colors flex-shrink-0">Products</Link>
+          <span className="flex-shrink-0 select-none">/</span>
           <Link
             to={`/products?category=${product.category}`}
-            className="hover:text-charcoal transition-colors capitalize"
+            className="hover:text-charcoal transition-colors capitalize flex-shrink-0"
           >
             {categoryLabels[product.category] || product.category}
           </Link>
-          <span>/</span>
-          <span className="text-charcoal truncate max-w-[220px]">{product.name}</span>
+          <span className="flex-shrink-0 select-none">/</span>
+          <span className="text-charcoal">{product.name}</span>
         </nav>
       </div>
 
       {/* Main product section */}
-      <section className="pb-24">
+      <section className="pb-16 sm:pb-24">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start">
 
             {/* Image gallery */}
-            <div className="lg:sticky lg:top-24 flex flex-col gap-3">
+            <div className="lg:sticky lg:top-24 flex flex-col gap-3 min-w-0">
               {/* Main image */}
               <div className="aspect-square bg-white rounded-2xl border border-border overflow-hidden flex items-center justify-center">
                 {product.images && product.images.length > 0 ? (
@@ -242,7 +242,7 @@ export default function ProductDetail() {
                     key={activeImage}
                     src={product.images[activeImage]}
                     alt={`${product.name} — view ${activeImage + 1}`}
-                    className="w-full h-full object-contain p-8 transition-opacity duration-300"
+                    className="w-full h-full object-contain p-4 sm:p-8 transition-opacity duration-300"
                   />
                 ) : (
                   <div className="text-charcoal-muted text-sm">No image available</div>
@@ -275,7 +275,7 @@ export default function ProductDetail() {
             </div>
 
             {/* Product info */}
-            <div className="flex flex-col gap-7">
+            <div className="flex flex-col gap-7 min-w-0">
               {/* Header */}
               <div>
                 <div className="flex items-center gap-2 mb-3">

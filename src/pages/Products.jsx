@@ -17,14 +17,25 @@ const categoryDescriptions = {
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [activeCategory, setActiveCategory] = useState(searchParams.get('category') || 'all')
+  const [filterOpen, setFilterOpen] = useState(false)
 
   useEffect(() => {
     setActiveCategory(searchParams.get('category') || 'all')
   }, [searchParams])
 
+  // Close mobile dropdown on Escape
+  useEffect(() => {
+    if (!filterOpen) return
+    function onKey(e) { if (e.key === 'Escape') setFilterOpen(false) }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [filterOpen])
+
   const filtered = activeCategory === 'all'
     ? products
     : products.filter(p => p.category === activeCategory)
+
+  const activeCategoryLabel = categories.find(c => c.id === activeCategory)?.label ?? 'All Products'
 
   const productsServiceSchema = createServiceSchema({
     name: 'CUCKOO Products for Home Wellness',
@@ -36,6 +47,7 @@ export default function Products() {
 
   function handleCategory(id) {
     setActiveCategory(id)
+    setFilterOpen(false)
     if (id === 'all') {
       setSearchParams({})
     } else {
@@ -77,8 +89,76 @@ export default function Products() {
       {/* Filters + Grid */}
       <section className="py-14">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
-          {/* Category filters */}
-          <div className="flex items-center gap-2 mb-10 overflow-x-auto pb-2">
+
+          {/* ── Mobile filter button (hidden on sm+) ── */}
+          <div className="relative sm:hidden mb-6">
+            <button
+              type="button"
+              onClick={() => setFilterOpen(v => !v)}
+              aria-haspopup="listbox"
+              aria-expanded={filterOpen}
+              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                activeCategory !== 'all'
+                  ? 'bg-charcoal text-white border border-charcoal'
+                  : 'bg-white border border-border text-charcoal shadow-sm'
+              }`}
+            >
+              {/* Funnel icon */}
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+              </svg>
+              <span>{activeCategoryLabel}</span>
+              <svg
+                width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"
+                aria-hidden="true"
+                className={`transition-transform duration-200 ${filterOpen ? 'rotate-180' : ''}`}
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+
+            {filterOpen && (
+              <>
+                {/* Backdrop */}
+                <div
+                  className="fixed inset-0 z-10"
+                  aria-hidden="true"
+                  onClick={() => setFilterOpen(false)}
+                />
+                {/* Dropdown */}
+                <div
+                  role="listbox"
+                  aria-label="Filter by category"
+                  className="absolute top-full left-0 mt-2 z-20 bg-white border border-border rounded-2xl shadow-[0_8px_28px_rgba(26,26,26,0.10)] overflow-hidden w-52"
+                >
+                  {categories.map((cat) => (
+                    <button
+                      key={cat.id}
+                      type="button"
+                      role="option"
+                      aria-selected={activeCategory === cat.id}
+                      onClick={() => handleCategory(cat.id)}
+                      className={`w-full flex items-center justify-between gap-3 px-4 py-3.5 text-left text-sm border-b border-border last:border-b-0 transition-colors ${
+                        activeCategory === cat.id
+                          ? 'bg-background text-charcoal font-semibold'
+                          : 'text-charcoal-muted hover:bg-background hover:text-charcoal'
+                      }`}
+                    >
+                      <span>{cat.label}</span>
+                      {activeCategory === cat.id && (
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="M20 6L9 17l-5-5" />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* ── Desktop filter chips (hidden on mobile) ── */}
+          <div className="hidden sm:flex items-center gap-2 mb-10 overflow-x-auto pb-2">
             {categories.map(cat => (
               <button
                 key={cat.id}
@@ -94,7 +174,7 @@ export default function Products() {
             ))}
           </div>
 
-          {/* Count */}
+          {/* Count + helper */}
           <p className="text-sm text-charcoal-muted mb-2">
             {filtered.length} {filtered.length === 1 ? 'product' : 'products'}
           </p>
@@ -106,8 +186,8 @@ export default function Products() {
             .
           </p>
 
-          {/* Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {/* Grid — 2 cols on mobile, existing breakpoints on sm+ */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5">
             {filtered.map(product => (
               <ProductCard key={product.slug} product={product} />
             ))}
