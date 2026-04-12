@@ -19,6 +19,27 @@
     background-color: #3B82C4;
     color: white;
   }
+
+  /* iOS Safari auto-zoom guard: keep real form controls at >=16px on mobile */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  input::placeholder,
+  textarea::placeholder,
+  select::placeholder {
+    font-size: inherit;
+  }
+
+  @media (min-width: 768px) {
+    input,
+    textarea,
+    select {
+      font-size: 14px;
+    }
+  }
 }
 
 @layer components {
