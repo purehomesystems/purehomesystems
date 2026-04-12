@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F7F7F5;
+    color: #1A1A1A;
+  }
+
+  ::selection {
+    background-color: #3B82C4;
+    color: white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-charcoal text-white text-sm font-medium rounded-full transition-all duration-200 hover:bg-charcoal-soft hover:shadow-lg hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-transparent text-charcoal text-sm font-medium rounded-full border border-border transition-all duration-200 hover:border-charcoal hover:bg-white hover:shadow-sm active:scale-[0.98];
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-charcoal text-white text-sm font-medium rounded-full transition-all duration-200 hover:bg-charcoal-soft hover:shadow-lg hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.15em] uppercase text-charcoal-muted;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-border p-6 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-border rounded-xl text-charcoal text-sm placeholder-charcoal-muted focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/10 transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
