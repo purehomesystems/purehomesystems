@@ -325,7 +325,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 max-w-full">
             {featuredProducts.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
@@ -343,33 +343,33 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-6 gap-4 sm:gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-3 sm:gap-5 max-w-full">
             {categoryShowcase.map((cat) => (
               <Link
                 key={cat.id}
                 to={`/products?category=${cat.id}`}
-                className={`group relative overflow-hidden rounded-3xl min-h-[280px] sm:min-h-[360px] ${cat.span}`}
+                className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl min-h-[220px] sm:min-h-[360px] ${cat.span}`}
               >
                 <img
                   src={cat.image}
                   alt={cat.title}
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="absolute inset-0 w-full h-full max-w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-charcoal/35 to-charcoal/20" />
 
-                <div className="relative z-10 h-full p-6 sm:p-8 flex flex-col justify-end">
-                  <h3 className="text-3xl sm:text-[42px] font-semibold text-white tracking-tight leading-none mb-3">
+                <div className="relative z-10 h-full p-4 sm:p-8 flex flex-col justify-end">
+                  <h3 className="text-xl sm:text-[42px] font-semibold text-white tracking-tight leading-none mb-2 sm:mb-3">
                     {cat.title}
                   </h3>
-                  <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-6 max-w-[26ch]">
+                  <p className="text-white/90 text-sm sm:text-lg leading-relaxed mb-4 sm:mb-6 max-w-[26ch]">
                     {cat.subtitle}
                   </p>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-white/30">
-                    <span className="text-sm text-white/80">{cat.count}</span>
-                    <span className="text-3xl text-white/90 leading-none transition-transform duration-300 group-hover:translate-x-1">
+                  <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-white/30">
+                    <span className="text-xs sm:text-sm text-white/80">{cat.count}</span>
+                    <span className="text-2xl sm:text-3xl text-white/90 leading-none transition-transform duration-300 group-hover:translate-x-1">
                       +
                     </span>
                   </div>
@@ -383,7 +383,7 @@ export default function Home() {
       {/* How It Works */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
-          <div className="mb-14 text-center max-w-xl mx-auto">
+          <div className="mb-12 sm:mb-14 text-center max-w-md sm:max-w-xl mx-auto">
             <p className="section-label mb-3">The process</p>
             <h2 className="text-3xl sm:text-4xl font-semibold text-charcoal tracking-tight">
               Simple from start to finish
@@ -397,7 +397,7 @@ export default function Home() {
             />
             <div className="grid sm:grid-cols-3 gap-8 relative">
               {steps.map((step) => (
-                <div key={step.number} className="flex flex-col gap-4">
+                <div key={step.number} className="flex flex-col gap-4 items-center sm:items-start text-center sm:text-left max-w-md mx-auto sm:max-w-none">
                   <div className="w-10 h-10 rounded-full bg-charcoal text-white flex items-center justify-center text-xs font-semibold relative z-10">
                     {step.number}
                   </div>

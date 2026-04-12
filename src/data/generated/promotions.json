@@ -2,8 +2,8 @@
   "version": 1,
   "sourceUrl": "https://cuckoorental.com/pages/promotion",
   "sourceHeadline": "Current promotions",
-  "syncedAt": "2026-04-12T18:06:48.736Z",
-  "lastSuccessfulSyncAt": "2026-04-12T18:06:48.736Z",
+  "syncedAt": "2026-04-12T21:02:16.688Z",
+  "lastSuccessfulSyncAt": "2026-04-12T21:02:16.688Z",
   "syncStatus": "success",
   "stale": false,
   "message": "",
@@ -25,7 +25,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/pages/promotion",
       "ctaUrl": "/products",
-      "syncedAt": "2026-04-12T18:06:48.736Z"
+      "syncedAt": "2026-04-12T21:02:16.688Z"
     },
     {
       "id": "fit-water-purifier-sale-2026",
@@ -44,7 +44,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cp-mn031",
       "ctaUrl": "/products/fit-water-purifier",
-      "syncedAt": "2026-04-12T18:06:48.736Z"
+      "syncedAt": "2026-04-12T21:02:16.688Z"
     },
     {
       "id": "bidet-promotion-2026",
@@ -63,7 +63,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cbt-is1131",
       "ctaUrl": "/products/inspure-instant-heating-premium-bidet",
-      "syncedAt": "2026-04-12T18:06:48.736Z"
+      "syncedAt": "2026-04-12T21:02:16.688Z"
     },
     {
       "id": "room-care-air-purifier-sale-2026",
@@ -82,7 +82,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cac-c1020fw",
       "ctaUrl": "/products/room-care-smart-air-purifier",
-      "syncedAt": "2026-04-12T18:06:48.736Z"
+      "syncedAt": "2026-04-12T21:02:16.688Z"
     },
     {
       "id": "tower-max-air-purifier-sale-2026",
@@ -101,7 +101,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cac-d2020fw",
       "ctaUrl": "/products/tower-max-air-purifier",
-      "syncedAt": "2026-04-12T18:06:48.736Z"
+      "syncedAt": "2026-04-12T21:02:16.688Z"
     },
     {
       "id": "renature-3d-massage-chair-sale-2026",
@@ -120,7 +120,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cms-d10slgb",
       "ctaUrl": "/products/renature-3d-massage-chair",
-      "syncedAt": "2026-04-12T18:06:48.736Z"
+      "syncedAt": "2026-04-12T21:02:16.688Z"
     },
     {
       "id": "bubble-cleanser-sale-2026",
@@ -139,7 +139,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cws-ao201w",
       "ctaUrl": "/products/micro-bubble-cleanser",
-      "syncedAt": "2026-04-12T18:06:48.736Z"
+      "syncedAt": "2026-04-12T21:02:16.688Z"
     },
     {
       "id": "micro-bubble-cleanser-1",
@@ -157,7 +157,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cws-ao201w",
       "ctaUrl": "/products/micro-bubble-cleanser",
-      "syncedAt": "2026-04-12T18:06:48.736Z"
+      "syncedAt": "2026-04-12T21:02:16.688Z"
     }
   ]
 }

@@ -43,7 +43,7 @@
   }
 
   .input-field {
-    @apply w-full px-4 py-3 bg-white border border-border rounded-xl text-charcoal text-sm placeholder-charcoal-muted focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/10 transition-all duration-200;
+    @apply w-full px-4 py-3 bg-white border border-border rounded-xl text-charcoal text-base md:text-sm placeholder-charcoal-muted focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/10 transition-all duration-200;
   }
 }
 
