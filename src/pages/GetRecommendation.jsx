@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { products as catalogProducts } from '../data/products'
 import Seo from '../seo/Seo'
@@ -598,6 +598,11 @@ export default function GetRecommendation() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
   const [submitted, setSubmitted] = useState(false)
+
+  // Scroll to top immediately when success state appears
+  useEffect(() => {
+    if (submitted) window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [submitted])
 
   const recommendationSchema = createServiceSchema({
     name: 'Home System Recommendation Service',

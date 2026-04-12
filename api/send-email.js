@@ -180,11 +180,8 @@ export default async function handler(req, res) {
 
     // ── Email HTML ──────────────────────────────────────────────────────────
     //
-    // Layout intent: clean full-width professional email, not a floating card.
-    // - No outer padding / colored body background creating a "frame"
-    // - No border or border-radius on the main container
-    // - 640px max-width gives more horizontal breathing room
-    // - Sections separated by padding + light border-top, not nested boxes
+    // Single width="100%" table — no inner constrained container.
+    // Fills Gmail's full content pane naturally without a boxed / narrow look.
     //
     const html = `<!DOCTYPE html>
 <html lang="en">
@@ -195,88 +192,80 @@ export default async function handler(req, res) {
 </head>
 <body style="margin:0;padding:0;background:#ffffff;">
 
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
+
+    <!-- ── HEADER ──────────────────────────────────────────────────────── -->
     <tr>
-      <td align="center" style="padding:0;">
+      <td style="background:#1a1a1a;padding:22px 36px 20px;">
+        <p style="margin:0 0 5px;font-size:10px;font-weight:700;letter-spacing:0.13em;
+                   text-transform:uppercase;color:rgba(255,255,255,0.35);font-family:${FONT};">
+          PureHome Systems
+        </p>
+        <p style="margin:0;font-size:20px;font-weight:700;color:#ffffff;
+                   letter-spacing:-0.4px;font-family:${FONT};">
+          New Recommendation Request
+        </p>
+      </td>
+    </tr>
 
-        <table cellpadding="0" cellspacing="0" border="0"
-               style="width:100%;max-width:640px;background:#ffffff;">
+    <!-- ── LEAD SUMMARY ────────────────────────────────────────────────── -->
+    <tr>
+      <td style="background:#f5f5f3;border-bottom:1px solid #e6e6e4;padding:24px 36px;">
+        <p style="margin:0 0 3px;font-size:10px;font-weight:700;letter-spacing:0.11em;
+                   text-transform:uppercase;color:#b0b0b0;font-family:${FONT};">Lead</p>
+        <p style="margin:0 0 3px;font-size:22px;font-weight:700;color:#1a1a1a;
+                   letter-spacing:-0.5px;font-family:${FONT};">${esc(name)}</p>
+        <p style="margin:0 0 16px;font-size:13px;line-height:1.5;font-family:${FONT};">
+          <a href="mailto:${esc(email)}" style="color:#1a1a1a;text-decoration:none;font-weight:500;">${esc(email)}</a>${phone
+            ? `&nbsp;&nbsp;<span style="color:#c0c0c0;">&middot;</span>&nbsp;&nbsp;<a href="tel:${esc(phone)}" style="color:#666;text-decoration:none;">${esc(phone)}</a>`
+            : ''}
+        </p>
+        ${pillsHtml ? `<p style="margin:0 0 18px;line-height:2.2;">${pillsHtml}</p>` : ''}
+        <p style="margin:0;">${replyBtn}${callBtn}</p>
+      </td>
+    </tr>
 
-          <!-- ── HEADER ──────────────────────────────────────────────────── -->
-          <tr>
-            <td style="background:#1a1a1a;padding:22px 36px 20px;">
-              <p style="margin:0 0 5px;font-size:10px;font-weight:700;letter-spacing:0.13em;
-                         text-transform:uppercase;color:rgba(255,255,255,0.35);font-family:${FONT};">
-                PureHome Systems
-              </p>
-              <p style="margin:0;font-size:20px;font-weight:700;color:#ffffff;
-                         letter-spacing:-0.4px;font-family:${FONT};">
-                New Recommendation Request
-              </p>
-            </td>
-          </tr>
-
-          <!-- ── LEAD SUMMARY ────────────────────────────────────────────── -->
-          <tr>
-            <td style="background:#f5f5f3;border-bottom:1px solid #e6e6e4;padding:24px 36px;">
-              <p style="margin:0 0 3px;font-size:10px;font-weight:700;letter-spacing:0.11em;
-                         text-transform:uppercase;color:#b0b0b0;font-family:${FONT};">Lead</p>
-              <p style="margin:0 0 3px;font-size:22px;font-weight:700;color:#1a1a1a;
-                         letter-spacing:-0.5px;font-family:${FONT};">${esc(name)}</p>
-              <p style="margin:0 0 16px;font-size:13px;line-height:1.5;font-family:${FONT};">
-                <a href="mailto:${esc(email)}" style="color:#1a1a1a;text-decoration:none;font-weight:500;">${esc(email)}</a>${phone
-                  ? `&nbsp;&nbsp;<span style="color:#c0c0c0;">&middot;</span>&nbsp;&nbsp;<a href="tel:${esc(phone)}" style="color:#666;text-decoration:none;">${esc(phone)}</a>`
-                  : ''}
-              </p>
-              ${pillsHtml ? `<p style="margin:0 0 18px;line-height:2.2;">${pillsHtml}</p>` : ''}
-              <p style="margin:0;">${replyBtn}${callBtn}</p>
-            </td>
-          </tr>
-
-          <!-- ── CONTACT DETAILS ─────────────────────────────────────────── -->
-          <tr>
-            <td style="padding:26px 36px 22px;">
-              ${sectionHeading('Contact Details')}
-              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                ${dataRow('Name', name)}
-                ${dataRowHtml('Email',
-                  `<a href="mailto:${esc(email)}" style="color:#1a1a1a;text-decoration:underline;">${esc(email)}</a>`
-                )}
-                ${phone
-                  ? dataRowHtml('Phone',
-                      `<a href="tel:${esc(phone)}" style="color:#1a1a1a;text-decoration:none;">${esc(phone)}</a>`)
-                  : ''}
-              </table>
-            </td>
-          </tr>
-
-          <!-- ── HOME & INTEREST ─────────────────────────────────────────── -->
-          <tr>
-            <td style="padding:22px 36px;border-top:1px solid #ebebea;">
-              ${sectionHeading('Home & Interest')}
-              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                ${dataRow('Home type', homeType)}
-                ${dataRow('Interest', interest)}
-                ${message ? dataRow('Message', message) : ''}
-              </table>
-            </td>
-          </tr>
-
-          <!-- ── SELECTED PRODUCTS (conditional) ────────────────────────── -->
-          ${productsSection}
-
-          <!-- ── FOOTER ──────────────────────────────────────────────────── -->
-          <tr>
-            <td style="background:#f5f5f3;border-top:1px solid #e6e6e4;padding:14px 36px;">
-              <p style="margin:0;font-size:11px;color:#b0b0b0;line-height:1.7;font-family:${FONT};">
-                ${metaParts}
-              </p>
-            </td>
-          </tr>
-
+    <!-- ── CONTACT DETAILS ──────────────────────────────────────────────── -->
+    <tr>
+      <td style="padding:26px 36px 22px;">
+        ${sectionHeading('Contact Details')}
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          ${dataRow('Name', name)}
+          ${dataRowHtml('Email',
+            `<a href="mailto:${esc(email)}" style="color:#1a1a1a;text-decoration:underline;">${esc(email)}</a>`
+          )}
+          ${phone
+            ? dataRowHtml('Phone',
+                `<a href="tel:${esc(phone)}" style="color:#1a1a1a;text-decoration:none;">${esc(phone)}</a>`)
+            : ''}
         </table>
       </td>
     </tr>
+
+    <!-- ── HOME & INTEREST ──────────────────────────────────────────────── -->
+    <tr>
+      <td style="padding:22px 36px;border-top:1px solid #ebebea;">
+        ${sectionHeading('Home & Interest')}
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          ${dataRow('Home type', homeType)}
+          ${dataRow('Interest', interest)}
+          ${message ? dataRow('Message', message) : ''}
+        </table>
+      </td>
+    </tr>
+
+    <!-- ── SELECTED PRODUCTS (conditional) ─────────────────────────────── -->
+    ${productsSection}
+
+    <!-- ── FOOTER ───────────────────────────────────────────────────────── -->
+    <tr>
+      <td style="background:#f5f5f3;border-top:1px solid #e6e6e4;padding:14px 36px;">
+        <p style="margin:0;font-size:11px;color:#b0b0b0;line-height:1.7;font-family:${FONT};">
+          ${metaParts}
+        </p>
+      </td>
+    </tr>
+
   </table>
 
 </body>
