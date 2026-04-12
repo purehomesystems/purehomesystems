@@ -80,6 +80,8 @@ export default function GetRecommendation() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   const recommendationServiceSchema = createServiceSchema({
     name: 'Home System Recommendation Service',
@@ -98,14 +100,50 @@ export default function GetRecommendation() {
     return e
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length > 0) {
       setErrors(errs)
       return
     }
-    setSubmitted(true)
+
+    setSubmitError('')
+    setIsSubmitting(true)
+
+    try {
+      const selectedProductsPayload = selectedProducts.map((product) => ({
+        slug: product.slug,
+        name: product.name,
+        category: productCategoryLabels[product.category] || product.category,
+      }))
+      const selectedInterestLabel = productInterests.find((item) => item.id === form.interest)?.label || form.interest
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...form,
+          interest: selectedInterestLabel,
+          selectedProductSlugs,
+          selectedProducts: selectedProductsPayload,
+          sourcePage: '/get-recommendation',
+          submittedAt: new Date().toISOString(),
+        }),
+      })
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null)
+        throw new Error(data?.error || 'Unable to send your request right now.')
+      }
+
+      setSubmitted(true)
+    } catch (error) {
+      console.error('Recommendation form submission failed:', error)
+      setSubmitError('We could not submit your request right now. Please try again or call (408) 910-2223.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   function handleChange(field, value) {
@@ -437,9 +475,18 @@ export default function GetRecommendation() {
 
               {/* Submit */}
               <div className="pt-2">
-                <button type="submit" className="btn-primary w-full py-4 text-base">
-                  Send My Recommendation Request
+                <button
+                  type="submit"
+                  className={`btn-primary w-full py-4 text-base ${isSubmitting ? 'opacity-80 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send My Recommendation Request'}
                 </button>
+                {submitError && (
+                  <p className="text-xs text-red-500 text-center mt-3">
+                    {submitError}
+                  </p>
+                )}
                 <p className="text-xs text-charcoal-muted text-center mt-3">
                   No spam. No commitments. We'll reach out personally.
                 </p>
