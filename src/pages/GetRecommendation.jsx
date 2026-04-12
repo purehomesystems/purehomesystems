@@ -600,9 +600,25 @@ export default function GetRecommendation() {
   const [submitError, setSubmitError] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
-  // Scroll to top immediately when success state appears
+  // On successful submit: jump to top instantly and reset iOS Safari input zoom
   useEffect(() => {
-    if (submitted) window.scrollTo({ top: 0, behavior: 'instant' })
+    if (!submitted) return
+
+    window.scrollTo(0, 0)
+
+    const viewport = document.querySelector('meta[name="viewport"]')
+    if (!viewport) return
+
+    const original = viewport.getAttribute('content')
+    viewport.setAttribute('content', 'width=device-width, initial-scale=1')
+
+    const timer = window.setTimeout(() => {
+      if (original) {
+        viewport.setAttribute('content', original)
+      }
+    }, 300)
+
+    return () => window.clearTimeout(timer)
   }, [submitted])
 
   const recommendationSchema = createServiceSchema({

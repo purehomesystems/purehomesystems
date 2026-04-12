@@ -12,7 +12,7 @@ export const BUSINESS = {
   region: 'CA',
   postalCode: '95050',
   country: 'US',
-  instagram: 'https://www.instagram.com/getpurehomesystems/followers/',
+  instagram: 'https://www.instagram.com/getpurehomesystems/',
 }
 
 export function toAbsoluteUrl(path = '/') {

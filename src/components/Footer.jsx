@@ -106,7 +106,7 @@ export default function Footer() {
 
             <div className="mt-3">
               <a
-                href="https://www.instagram.com/getpurehomesystems/followers/"
+                href="https://www.instagram.com/getpurehomesystems/"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="PureHome Systems on Instagram"

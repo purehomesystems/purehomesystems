@@ -106,7 +106,7 @@ export default function FAQ() {
               Contact CUCKOO Directly
             </a>
             <a
-              href="https://www.instagram.com/getpurehomesystems/followers/"
+              href="https://www.instagram.com/getpurehomesystems/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

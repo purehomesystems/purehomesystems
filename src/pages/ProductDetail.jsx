@@ -402,7 +402,7 @@ export default function ProductDetail() {
                   Get Your Free Recommendation
                 </Link>
                 <a
-                  href="https://www.instagram.com/getpurehomesystems/followers/"
+                  href="https://www.instagram.com/getpurehomesystems/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary w-full text-center py-4 text-base mt-3 inline-flex items-center justify-center gap-2"
