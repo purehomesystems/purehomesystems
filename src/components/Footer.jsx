@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { openInstagram, INSTAGRAM_WEB } from '../utils/social'
 
 const navLinks = [
   { to: '/products', label: 'Products' },
@@ -106,11 +107,12 @@ export default function Footer() {
 
             <div className="mt-3">
               <a
-                href="https://www.instagram.com/getpurehomesystems/"
+                href={INSTAGRAM_WEB}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="PureHome Systems on Instagram"
                 aria-label="Instagram"
+                onClick={openInstagram}
                 className="inline-flex items-center text-charcoal-muted hover:text-charcoal transition-colors"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

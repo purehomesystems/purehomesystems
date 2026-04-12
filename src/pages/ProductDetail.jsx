@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
+import { openInstagram, INSTAGRAM_WEB } from '../utils/social'
 import { products, formatPrice } from '../data/products'
 import { rentalPlans } from '../data/rentalPlans'
 import ProductCard from '../components/ProductCard'
@@ -402,9 +403,10 @@ export default function ProductDetail() {
                   Get Your Free Recommendation
                 </Link>
                 <a
-                  href="https://www.instagram.com/getpurehomesystems/"
+                  href={INSTAGRAM_WEB}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={openInstagram}
                   className="btn-secondary w-full text-center py-4 text-base mt-3 inline-flex items-center justify-center gap-2"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { openInstagram, INSTAGRAM_WEB } from '../utils/social'
 import { faqs, faqCategories } from '../data/faq'
 import Seo from '../seo/Seo'
 import { createFAQSchema, createServiceSchema } from '../seo/site'
@@ -106,10 +107,11 @@ export default function FAQ() {
               Contact CUCKOO Directly
             </a>
             <a
-              href="https://www.instagram.com/getpurehomesystems/"
+              href={INSTAGRAM_WEB}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
+              onClick={openInstagram}
               className="btn-secondary px-8 py-3.5"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

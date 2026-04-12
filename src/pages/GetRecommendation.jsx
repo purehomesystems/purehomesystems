@@ -477,6 +477,12 @@ function Step3Review({ form, selectedProducts, isSubmitting, submitError, onGoTo
 // ─── Success state ────────────────────────────────────────────────────────────
 
 function SuccessState({ name, selectedProducts, recommendationSchema }) {
+  // Belt-and-suspenders: scroll to top on mount in case the pre-render
+  // scroll in handleSubmit was painted before the state change settled.
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="pt-16 min-h-screen flex items-center justify-center">
       <Seo
@@ -600,25 +606,32 @@ export default function GetRecommendation() {
   const [submitError, setSubmitError] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
-  // On successful submit: jump to top instantly and reset iOS Safari input zoom
+  // On successful submit: belt-and-suspenders scroll + zoom reset after render.
+  // The primary reset happens synchronously in handleSubmit before setSubmitted(true),
+  // so the success state mounts with the viewport already at the top.
+  // This effect covers any edge case where the pre-render scroll didn't settle.
   useEffect(() => {
     if (!submitted) return
 
+    // Blur any focused element to release iOS input zoom.
+    if (document.activeElement && document.activeElement !== document.body) {
+      document.activeElement.blur()
+    }
+
     window.scrollTo(0, 0)
 
-    const viewport = document.querySelector('meta[name="viewport"]')
-    if (!viewport) return
-
-    const original = viewport.getAttribute('content')
-    viewport.setAttribute('content', 'width=device-width, initial-scale=1')
-
-    const timer = window.setTimeout(() => {
-      if (original) {
-        viewport.setAttribute('content', original)
+    // iOS Safari zoom reset: briefly enforce maximum-scale=1 (not initial-scale=1 —
+    // that only affects initial load). This forces Safari to zoom back to 1:1 at runtime,
+    // then we restore the original content so pinch-zoom remains usable.
+    try {
+      const viewport = document.querySelector('meta[name="viewport"]')
+      if (viewport) {
+        const original = viewport.getAttribute('content') || 'width=device-width, initial-scale=1'
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1')
+        const timer = setTimeout(() => viewport.setAttribute('content', original), 300)
+        return () => clearTimeout(timer)
       }
-    }, 300)
-
-    return () => window.clearTimeout(timer)
+    } catch (_) { /* non-critical */ }
   }, [submitted])
 
   const recommendationSchema = createServiceSchema({
@@ -707,6 +720,14 @@ export default function GetRecommendation() {
         throw new Error(data?.error || 'Unable to send your request right now.')
       }
 
+      // Synchronous pre-render positioning: scroll to top and blur the focused
+      // submit button BEFORE the state update triggers a render. This ensures
+      // SuccessState mounts with the viewport already at the top, eliminating
+      // the one-frame flash where the success page appears mid-scroll.
+      if (document.activeElement && document.activeElement !== document.body) {
+        document.activeElement.blur()
+      }
+      window.scrollTo(0, 0)
       setSubmitted(true)
     } catch (error) {
       console.error('Recommendation form submission failed:', error)
