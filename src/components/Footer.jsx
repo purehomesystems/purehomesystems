@@ -34,10 +34,10 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-1.5 items-center sm:items-start">
               <a
-                href="mailto:alex@getpurehomesystems.com"
+                href="mailto:alex@purehomesystemsco.com"
                 className="text-sm text-charcoal-muted hover:text-charcoal transition-colors"
               >
-                alex@getpurehomesystems.com
+                alex@purehomesystemsco.com
               </a>
               <a
                 href="tel:+14089102223"
@@ -98,7 +98,7 @@ export default function Footer() {
                 Call Us
               </a>
               <a
-                href="mailto:alex@getpurehomesystems.com"
+                href="mailto:alex@purehomesystemsco.com"
                 className="text-sm text-charcoal-muted hover:text-charcoal transition-colors"
               >
                 Email Us

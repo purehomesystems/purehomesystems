@@ -1,7 +1,7 @@
 import { Resend } from 'resend'
 
 const SITE      = 'https://purehomesystemsco.com'
-const TO_EMAIL  = 'alex@getpurehomesystems.com'
+const TO_EMAIL  = 'alex@purehomesystemsco.com'
 const FONT      = "system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif"
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────

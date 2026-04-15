@@ -77,7 +77,7 @@ function LeftPanel({ selectedProducts }) {
           Prefer direct contact?{' '}
           <a href="tel:+14089102223" className="underline hover:text-charcoal transition-colors">(408) 910-2223</a>
           {' · '}
-          <a href="mailto:alex@getpurehomesystems.com" className="underline hover:text-charcoal transition-colors">Email us</a>
+          <a href="mailto:alex@purehomesystemsco.com" className="underline hover:text-charcoal transition-colors">Email us</a>
         </p>
       </div>
 

@@ -5,7 +5,7 @@ export const DEFAULT_OG_IMAGE = '/logo.png'
 export const BUSINESS = {
   name: 'PureHome Systems',
   legalName: 'PureHome Systems',
-  email: 'alex@getpurehomesystems.com',
+  email: 'alex@purehomesystemsco.com',
   phone: '+1-408-910-2223',
   streetAddress: '1590 Los Padres Blvd',
   city: 'Santa Clara',
