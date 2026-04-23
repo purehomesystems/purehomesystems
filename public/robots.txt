@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://purehomesystemsco.com/sitemap.xml
+Sitemap: https://www.purehomesystemsco.com/sitemap.xml

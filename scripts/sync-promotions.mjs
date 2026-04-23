@@ -29,7 +29,7 @@ function fetchHtml(url) {
       url,
       {
         headers: {
-          'User-Agent': 'PureHomeSystemsPromotionSync/1.0 (+https://purehomesystemsco.com)',
+          'User-Agent': 'PureHomeSystemsPromotionSync/1.0 (+https://www.purehomesystemsco.com)',
           Accept: 'text/html,application/xhtml+xml',
         },
       },

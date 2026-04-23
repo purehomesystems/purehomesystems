@@ -74,7 +74,7 @@ export default function Products() {
         title="CUCKOO Water Purifiers, Air Purifiers, Bidets, and More"
         description="Browse PureHome Systems product catalog for premium CUCKOO water purifiers, air purifiers, bidets, bubble cleanser systems, and massage chairs."
         path="/products"
-        canonical="https://purehomesystemsco.com/products"
+        canonical="https://www.purehomesystemsco.com/products"
         keywords="CUCKOO products, CUCKOO water purifier, CUCKOO air purifier, CUCKOO bidet, best water purifier for home, home wellness solutions, Santa Clara"
         schema={PRODUCTS_SCHEMA}
       />

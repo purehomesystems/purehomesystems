@@ -1,5 +1,5 @@
 export const SITE_NAME = 'PureHome Systems'
-export const SITE_URL = 'https://purehomesystemsco.com'
+export const SITE_URL = 'https://www.purehomesystemsco.com'
 export const DEFAULT_OG_IMAGE = '/logo.png'
 
 export const BUSINESS = {

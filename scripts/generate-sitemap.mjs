@@ -2,7 +2,7 @@ import { writeFileSync } from 'node:fs'
 import { products } from '../src/data/products.js'
 import { guides } from '../src/data/guides.js'
 
-const base = 'https://purehomesystemsco.com'
+const base = 'https://www.purehomesystemsco.com'
 const today = new Date().toISOString().slice(0, 10)
 
 const staticRoutes = [
