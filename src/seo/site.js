@@ -17,7 +17,29 @@ export const BUSINESS = {
 
 export function toAbsoluteUrl(path = '/') {
   if (!path) return SITE_URL
-  if (path.startsWith('http://') || path.startsWith('https://')) return path
+
+  const canonical = new URL(SITE_URL)
+  const canonicalDomain = canonical.hostname.replace(/^www\./, '')
+
+  // Normalize our own absolute URLs (http/https, www/non-www) to the canonical
+  // production origin while preserving path/query/hash.
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('//')) {
+    try {
+      const absolute = new URL(path, SITE_URL)
+      const absoluteDomain = absolute.hostname.replace(/^www\./, '')
+
+      if (absoluteDomain === canonicalDomain) {
+        return `${canonical.origin}${absolute.pathname}${absolute.search}${absolute.hash}`
+      }
+
+      // External absolute URLs (e.g. CDN/image hosts) should remain unchanged.
+      return absolute.href
+    } catch {
+      return path
+    }
+  }
+
+  // Relative paths keep existing behavior and are resolved against SITE_URL.
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`
 }
 
