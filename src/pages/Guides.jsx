@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom'
 import Seo from '../seo/Seo'
 import { createServiceSchema } from '../seo/site'
-import { guideTopics, getGuidesByTopic } from '../data/guides'
+import { guideTopics, getGuidesByTopic, getGuideBySlug } from '../data/guides'
+
+const POPULAR_SLUGS = [
+  'best-water-purifier-for-home',
+  'water-purifier-vs-water-filter',
+  'types-of-water-purifiers',
+]
 
 export default function Guides() {
   const guideHubSchema = createServiceSchema({
@@ -40,17 +46,63 @@ export default function Guides() {
 
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 space-y-12">
-          <div className="bg-white border border-border rounded-2xl p-5 sm:p-6">
-            <p className="section-label mb-2">Featured guide</p>
+          {/* Featured guide */}
+          <div className="bg-white border border-border rounded-2xl p-6 sm:p-8">
+            <div className="flex items-center gap-2.5 mb-3">
+              <p className="section-label">Featured guide</p>
+              <span className="text-[11px] font-semibold text-accent-blue bg-accent-blue/10 px-2 py-0.5 rounded-full leading-none">
+                Start here
+              </span>
+            </div>
             <h2 className="text-xl font-semibold text-charcoal leading-tight mb-2">
               <Link to="/best-water-purifier-for-home" className="hover:underline underline-offset-2">
                 Best Water Purifier for Home
               </Link>
             </h2>
-            <p className="text-sm text-charcoal-muted leading-relaxed">
+            <p className="text-sm text-charcoal-muted leading-relaxed mb-5">
               A complete guide to choosing the right system for your home
             </p>
+            <Link to="/best-water-purifier-for-home" className="btn-primary text-sm px-5 py-2.5">
+              Read full guide &rarr;
+            </Link>
           </div>
+
+          {/* Popular guides */}
+          {(() => {
+            const popularGuides = POPULAR_SLUGS.map(getGuideBySlug).filter(Boolean)
+            if (!popularGuides.length) return null
+            return (
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-semibold text-charcoal tracking-tight mb-6">
+                  Popular Guides
+                </h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {popularGuides.map((guide) => (
+                    <article key={guide.slug} className="card flex flex-col gap-4 h-full">
+                      <div className="flex items-center justify-between gap-3">
+                        <p className="section-label">{guide.readingTime}</p>
+                        <p className="text-xs text-charcoal-muted">Updated {guide.updatedAt}</p>
+                      </div>
+                      <h3 className="text-xl font-semibold text-charcoal leading-tight line-clamp-2">
+                        <Link
+                          to={`/guides/${guide.slug}`}
+                          className="hover:underline underline-offset-2"
+                        >
+                          {guide.title}
+                        </Link>
+                      </h3>
+                      <p className="text-sm text-charcoal-muted leading-relaxed line-clamp-3">{guide.excerpt}</p>
+                      <div className="pt-3 border-t border-border flex items-center justify-end mt-auto">
+                        <Link to={`/guides/${guide.slug}`} className="btn-secondary text-sm px-4 py-2">
+                          Read guide
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            )
+          })()}
 
           {guideTopics.map((topic) => {
             const topicGuides = getGuidesByTopic(topic.id)
@@ -61,14 +113,14 @@ export default function Guides() {
                 <h2 className="text-2xl sm:text-3xl font-semibold text-charcoal tracking-tight mb-6">
                   {topic.label}
                 </h2>
-                <div className="grid md:grid-cols-2 gap-5">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                   {topicGuides.map((guide) => (
-                    <article key={guide.slug} className="card flex flex-col gap-4">
+                    <article key={guide.slug} className="card flex flex-col gap-4 h-full">
                       <div className="flex items-center justify-between gap-3">
                         <p className="section-label">{guide.readingTime}</p>
                         <p className="text-xs text-charcoal-muted">Updated {guide.updatedAt}</p>
                       </div>
-                      <h3 className="text-xl font-semibold text-charcoal leading-tight">
+                      <h3 className="text-xl font-semibold text-charcoal leading-tight line-clamp-2">
                         <Link
                           to={`/guides/${guide.slug}`}
                           className="hover:underline underline-offset-2"
@@ -76,8 +128,8 @@ export default function Guides() {
                           {guide.title}
                         </Link>
                       </h3>
-                      <p className="text-sm text-charcoal-muted leading-relaxed">{guide.excerpt}</p>
-                      <div className="pt-3 border-t border-border flex items-center justify-end">
+                      <p className="text-sm text-charcoal-muted leading-relaxed line-clamp-3">{guide.excerpt}</p>
+                      <div className="pt-3 border-t border-border flex items-center justify-end mt-auto">
                         <Link to={`/guides/${guide.slug}`} className="btn-secondary text-sm px-4 py-2">
                           Read guide
                         </Link>
@@ -85,6 +137,14 @@ export default function Guides() {
                     </article>
                   ))}
                 </div>
+                {topic.id === 'water' && (
+                  <p className="mt-4 text-sm text-charcoal-muted">
+                    Want to understand pricing?{' '}
+                    <Link to="/water-purifier-cost" className="font-medium text-charcoal hover:underline underline-offset-2">
+                      See water purifier cost breakdown &rarr;
+                    </Link>
+                  </p>
+                )}
               </div>
             )
           })}
