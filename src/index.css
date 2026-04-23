@@ -73,3 +73,21 @@
     text-wrap: balance;
   }
 }
+
+/* Respect the OS-level reduced-motion preference.
+   Collapses all transitions and animations to near-instant without
+   removing them from the DOM (functionality is preserved). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Improve scroll smoothness on touch devices by ensuring the browser
+   handles scrolling natively without waiting for JS event handlers. */
+html {
+  -webkit-overflow-scrolling: touch;
+}

@@ -269,6 +269,8 @@ export default function ProductDetail() {
                     src={product.images[activeImage]}
                     alt={`${product.name} — view ${activeImage + 1}`}
                     className="w-full h-full object-contain p-4 sm:p-8 transition-opacity duration-300"
+                    loading="eager"
+                    decoding="async"
                   />
                 ) : (
                   <div className="text-charcoal-muted text-sm">No image available</div>
@@ -293,6 +295,7 @@ export default function ProductDetail() {
                         alt={`${product.name} thumbnail ${i + 1}`}
                         className="w-full h-full object-contain p-1"
                         loading="lazy"
+                        decoding="async"
                       />
                     </button>
                   ))}
@@ -448,6 +451,13 @@ export default function ProductDetail() {
                   </p>
                 </div>
               )}
+
+              <p className="text-xs text-charcoal-muted leading-relaxed">
+                Available nationwide. Professional installation in select areas.{' '}
+                <Link to="/installation-availability" className="underline hover:text-charcoal transition-colors">
+                  See installation options
+                </Link>
+              </p>
 
               {/* CTA */}
               <div className="pt-2">

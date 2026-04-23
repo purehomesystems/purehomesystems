@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Early connection hints: resolve DNS and open TCP/TLS before JS runs -->
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://cdn.shopify.com" />
+
+    <!-- Preload the above-the-fold hero image so the browser fetches it
+         as soon as the HTML is parsed, before React even loads -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=75&auto=format&fit=crop"
+      fetchpriority="high"
+    />
     <meta name="description" content="PureHome Systems provides premium home water and wellness systems, including CUCKOO water purifiers, air purifiers, bidets, and flexible plan options with installation support." />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <meta name="theme-color" content="#1A1A1A" />

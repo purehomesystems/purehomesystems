@@ -25,6 +25,7 @@ export default function ProductCard({ product }) {
             alt={product.name}
             className="w-full h-full object-contain p-3 sm:p-6 transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
+            decoding="async"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-background">

@@ -4,6 +4,7 @@ import { openInstagram, INSTAGRAM_WEB } from '../utils/social'
 const navLinks = [
   { to: '/products', label: 'Products' },
   { to: '/how-it-works', label: 'How It Works' },
+  { to: '/installation-availability', label: 'Installation & Availability' },
   { to: '/guides', label: 'Guides' },
   { to: '/promotions', label: 'Promotions' },
   { to: '/faq', label: 'FAQ' },

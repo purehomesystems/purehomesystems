@@ -132,6 +132,17 @@ const categories = [
   },
 ]
 
+// Schema created once at module level — stable reference prevents Seo's
+// useEffect from re-running on every parent render due to a new array literal
+const homeSchema = createServiceSchema({
+  name: 'Premium Home Wellness Systems with Flexible Plans',
+  description:
+    'PureHome Systems helps homeowners choose CUCKOO water purifiers, air purifiers, bidets, and massage chairs with flexible plans, installation, and ongoing support.',
+  serviceType: 'Home wellness system consultation and installation support',
+  path: '/',
+})
+const HOME_SCHEMA = [homeSchema]
+
 const categoryShowcase = [
   {
     id: 'water',
@@ -176,14 +187,6 @@ const categoryShowcase = [
 ]
 
 export default function Home() {
-  const homeSchema = createServiceSchema({
-    name: 'Premium Home Wellness Systems with Flexible Plans',
-    description:
-      'PureHome Systems helps homeowners choose CUCKOO water purifiers, air purifiers, bidets, and massage chairs with flexible plans, installation, and ongoing support.',
-    serviceType: 'Home wellness system consultation and installation support',
-    path: '/',
-  })
-
   return (
     <div className="pt-16">
       <Seo
@@ -192,7 +195,7 @@ export default function Home() {
         path="/"
         keywords="home water system, water purifier for home, home wellness systems, CUCKOO authorized partner, water purifier installation, air purifier for home, flexible appliance plans, Santa Clara"
         image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=75&auto=format&fit=crop"
-        schema={[homeSchema]}
+        schema={HOME_SCHEMA}
       />
 
       {/* Hero */}
@@ -231,7 +234,15 @@ export default function Home() {
           </h1>
 
           <p className="text-white/90 text-lg leading-relaxed max-w-xl mx-auto mb-10">
-            We match your home with the right CUCKOO water purifier, air purifier, bidet, or massage chair, then handle setup and ongoing service.
+            We match your home with the right premium CUCKOO rental system for cleaner water, better air, and everyday comfort.
+          </p>
+
+          <p className="text-white/70 text-sm leading-relaxed max-w-2xl mx-auto mb-8">
+            Available nationwide. Professional installation in select areas. Guided self-install support elsewhere.{' '}
+            <Link to="/installation-availability" className="underline underline-offset-2 hover:text-white transition-colors">
+              See installation availability
+            </Link>
+            .
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10 sm:mb-14">
@@ -259,8 +270,7 @@ export default function Home() {
             ].map((stat, i) => (
               <div
                 key={stat.label}
-                className="flex-1 w-full px-6 py-4 bg-white/6 hover:bg-white/10 transition-colors text-center border-white/10"
-                style={{ borderRight: i < 2 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}
+                className={`flex-1 w-full px-6 py-4 bg-white/6 hover:bg-white/10 transition-colors text-center${i < 2 ? ' border-r border-white/10' : ''}`}
               >
                 <p className="text-[10px] uppercase tracking-[0.12em] text-white/55 mb-1">{stat.label}</p>
                 <p className="text-sm font-semibold text-white">{stat.value}</p>
@@ -281,7 +291,13 @@ export default function Home() {
                 One source.<br />Clear guidance.<br />Ongoing support.
               </h2>
               <p className="text-charcoal-muted text-lg leading-relaxed mb-8">
-                PureHome Systems helps you navigate CUCKOO's full catalog, choose the right rental plan, and get your system installed and maintained. We handle the complexity so you do not have to.
+                PureHome Systems helps you navigate CUCKOO's full catalog, choose the right rental plan, and get set up with professional installation in select areas or guided self-install support elsewhere.
+              </p>
+              <p className="text-sm text-charcoal-muted mb-6">
+                Not sure where to start?{' '}
+                <Link to="/best-water-purifier-for-home" className="underline hover:text-charcoal transition-colors">
+                  Read our guide on choosing the best water purifier
+                </Link>
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link to="/get-recommendation" className="btn-primary gap-2">

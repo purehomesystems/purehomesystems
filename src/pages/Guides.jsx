@@ -40,6 +40,18 @@ export default function Guides() {
 
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 space-y-12">
+          <div className="bg-white border border-border rounded-2xl p-5 sm:p-6">
+            <p className="section-label mb-2">Featured guide</p>
+            <h2 className="text-xl font-semibold text-charcoal leading-tight mb-2">
+              <Link to="/best-water-purifier-for-home" className="hover:underline underline-offset-2">
+                Best Water Purifier for Home
+              </Link>
+            </h2>
+            <p className="text-sm text-charcoal-muted leading-relaxed">
+              A complete guide to choosing the right system for your home
+            </p>
+          </div>
+
           {guideTopics.map((topic) => {
             const topicGuides = getGuidesByTopic(topic.id)
             if (!topicGuides.length) return null

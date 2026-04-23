@@ -1,9 +1,26 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { products, categories } from '../data/products'
 import ProductCard from '../components/ProductCard'
 import Seo from '../seo/Seo'
 import { createServiceSchema } from '../seo/site'
+
+// Inline style extracted to a module-level constant — avoids creating a new
+// object on every render, which would force style recalculation each re-render
+const HEADER_GRADIENT = {
+  background: 'radial-gradient(ellipse 70% 80% at 50% 0%, rgba(59,130,196,0.12) 0%, transparent 70%)',
+}
+
+// Schema created once at module level — stable reference so Seo's useEffect
+// does not re-run on every render triggered by filter state changes
+const productsServiceSchema = createServiceSchema({
+  name: 'CUCKOO Products for Home Wellness',
+  description:
+    'Explore CUCKOO water purifiers, air purifiers, bidets, bubble cleanser systems, and massage chairs with flexible plans and installation support.',
+  serviceType: 'Home wellness product selection support',
+  path: '/products',
+})
+const PRODUCTS_SCHEMA = [productsServiceSchema]
 
 const categoryDescriptions = {
   all: 'The full CUCKOO Rental America catalog, professionally installed and serviced.',
@@ -31,19 +48,14 @@ export default function Products() {
     return () => document.removeEventListener('keydown', onKey)
   }, [filterOpen])
 
-  const filtered = activeCategory === 'all'
-    ? products
-    : products.filter(p => p.category === activeCategory)
+  // Memoized so the filter only recomputes when activeCategory changes,
+  // not on every re-render (e.g. dropdown open/close state changes)
+  const filtered = useMemo(
+    () => activeCategory === 'all' ? products : products.filter(p => p.category === activeCategory),
+    [activeCategory]
+  )
 
   const activeCategoryLabel = categories.find(c => c.id === activeCategory)?.label ?? 'All Products'
-
-  const productsServiceSchema = createServiceSchema({
-    name: 'CUCKOO Products for Home Wellness',
-    description:
-      'Explore CUCKOO water purifiers, air purifiers, bidets, bubble cleanser systems, and massage chairs with flexible plans and installation support.',
-    serviceType: 'Home wellness product selection support',
-    path: '/products',
-  })
 
   function handleCategory(id) {
     setActiveCategory(id)
@@ -64,14 +76,14 @@ export default function Products() {
         path="/products"
         canonical="https://purehomesystemsco.com/products"
         keywords="CUCKOO products, CUCKOO water purifier, CUCKOO air purifier, CUCKOO bidet, best water purifier for home, home wellness solutions, Santa Clara"
-        schema={[productsServiceSchema]}
+        schema={PRODUCTS_SCHEMA}
       />
 
       {/* Header */}
       <section className="relative py-20 sm:py-28 bg-charcoal overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 0%, rgba(59,130,196,0.12) 0%, transparent 70%)' }}
+          style={HEADER_GRADIENT}
         />
         <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-4">CUCKOO Catalog</p>
