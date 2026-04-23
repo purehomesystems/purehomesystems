@@ -198,6 +198,31 @@ export default function ProductDetail() {
     path: `/products/${product.slug}`,
   })
 
+  const specRows = product.specs
+    ? [
+        product.specs.type             && ['Type',                  product.specs.type],
+        product.specs.dimensions       && ['Dimensions',            product.specs.dimensions],
+        product.specs.dimensionsUpright  && ['Dimensions (upright)',  product.specs.dimensionsUpright],
+        product.specs.dimensionsReclined && ['Dimensions (reclined)', product.specs.dimensionsReclined],
+        product.specs.weight           && ['Weight',                product.specs.weight],
+        product.specs.filtration       && ['Filtration',            product.specs.filtration],
+        product.specs.capacity         && ['Capacity',              product.specs.capacity],
+        product.specs.temperatures     && ['Temperatures',          product.specs.temperatures],
+        product.specs.coverage         && ['Coverage area',         product.specs.coverage],
+        product.specs.fits             && ['Fits',                  product.specs.fits],
+        product.specs.nozzle           && ['Nozzle',                product.specs.nozzle],
+        product.specs.bubbleIntensity  && ['Bubble intensity',      product.specs.bubbleIntensity],
+        product.specs.waterPressure    && ['Water pressure',        product.specs.waterPressure],
+        product.specs.airbags          && ['Airbags',               product.specs.airbags],
+        product.specs.wallClearance    && ['Wall clearance',        product.specs.wallClearance],
+        product.specs.track            && ['Track system',          product.specs.track],
+        product.specs.zeroGravity      && ['Zero gravity',          product.specs.zeroGravity],
+        product.specs.airIntensity     && ['Air intensity',         product.specs.airIntensity],
+        product.specs.certifications   && ['Certifications',        product.specs.certifications],
+        product.specs.madeIn           && ['Made in',               product.specs.madeIn],
+      ].filter(Boolean)
+    : []
+
   return (
     <div className="pt-16">
       <Seo
@@ -271,6 +296,21 @@ export default function ProductDetail() {
                       />
                     </button>
                   ))}
+                </div>
+              )}
+
+              {/* Specifications — desktop only (hidden on mobile, shown in right column instead) */}
+              {specRows.length > 0 && (
+                <div className="hidden lg:block mt-2">
+                  <p className="section-label mb-2">Specifications</p>
+                  <dl className="flex flex-col">
+                    {specRows.map(([label, value]) => (
+                      <div key={label} className="flex gap-4 text-sm py-2 border-b border-border last:border-0">
+                        <dt className="text-charcoal-muted flex-shrink-0 w-36">{label}</dt>
+                        <dd className="text-charcoal">{value}</dd>
+                      </div>
+                    ))}
+                  </dl>
                 </div>
               )}
             </div>
@@ -350,11 +390,26 @@ export default function ProductDetail() {
                 </p>
               )}
 
-              {/* Description */}
+              {/* About this product */}
               {product.description && (
                 <div>
                   <p className="section-label mb-2">About this product</p>
                   <p className="text-charcoal-muted text-sm leading-relaxed">{product.description}</p>
+                </div>
+              )}
+
+              {/* Specifications — mobile only (shown in left column on desktop) */}
+              {specRows.length > 0 && (
+                <div className="lg:hidden">
+                  <p className="section-label mb-2">Specifications</p>
+                  <dl className="flex flex-col">
+                    {specRows.map(([label, value]) => (
+                      <div key={label} className="flex gap-4 text-sm py-2 border-b border-border last:border-0">
+                        <dt className="text-charcoal-muted flex-shrink-0 w-36">{label}</dt>
+                        <dd className="text-charcoal">{value}</dd>
+                      </div>
+                    ))}
+                  </dl>
                 </div>
               )}
 

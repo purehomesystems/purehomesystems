@@ -24,9 +24,18 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/M-04.jpg?v=1773079460',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/M-05.jpg?v=1773079460',
     ],
-    description: '',
+    description: 'Tankless countertop water purifier with direct water supply and an ultra-slim 5.3-inch profile. Delivers room-temperature purified water on demand with no storage tank required. Smart automatic dispensing lets you set a volume and step away. Tool-free filter replacement and a detachable sliding drip tray that accommodates cups and large containers.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Countertop',
+      dimensions: '5.3"W × 14.9"D × 14.9"H',
+      weight: '7.49 lbs (3.4 kg)',
+      capacity: 'Direct water supply (tankless)',
+      temperatures: 'Room temperature',
+      certifications: 'FCC, cETL',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -52,9 +61,18 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/221108___16106_e03ba8e0-00d6-4966-85d3-4f3b031fd237.jpg?v=1746132984',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/221108___16106.jpg?v=1746132984',
     ],
-    description: 'Industry-leading filter technology, advanced features, and intuitive design. Compact under-sink installation with a 3.2-gallon capacity tank for rapid water access. Suited for both residential and commercial applications.',
+    description: 'Under-sink reverse osmosis water purifier with a 3.2-gallon storage tank for on-demand room-temperature water. 3-stage filtration delivers high-quality, great-tasting water. Compact slim design saves under-sink space and suits both residential and commercial use.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Under-Sink',
+      dimensions: '5.7"W × 14.3"D × 12.9"H',
+      weight: '9.5 lbs (4.3 kg)',
+      filtration: 'Reverse osmosis (RO), 3-stage',
+      capacity: '3.2 gal tank',
+      temperatures: 'Room temperature',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -76,9 +94,18 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/TN102-02.jpg?v=1759340988',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/TN102-06_1b476aeb-4618-4a3f-9787-a1b30d9a69c0.jpg?v=1759342045',
     ],
-    description: '',
+    description: 'Tankless countertop purifier dispensing cold and room-temperature water. The slim 6.5-inch width fits narrow kitchen spaces with no complicated installation. A 4-way moving spout adjusts height for tall or short containers, and a hidden touch on the spout side stops water flow instantly. Tool-free filter replacement.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Countertop',
+      dimensions: '6.5"W × 20.2"D × 15.7"H',
+      weight: '21.2 lbs',
+      capacity: 'Direct water supply (tankless)',
+      temperatures: 'Cold, Room temperature',
+      certifications: 'FCC, cETL',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -97,9 +124,19 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/CP-FR601HW-01_9d120885-adf4-4f84-8536-eea9cd5b6b54.png?v=1746119846',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/CP-FR601HW_02_565dcd6d-ffe0-4208-87c2-76cf26b31a91.jpg?v=1746119846',
     ],
-    description: 'Advanced reverse osmosis filtration with a 6-liter capacity tank. Dispenses hot, cold, and room-temperature water. Features water level monitoring, hot water safety lock, and user-friendly touch controls with a paddle dispenser.',
+    description: 'Countertop reverse osmosis water purifier with a 6-liter tank for hot and cold water. Real-time water level indicator, hot water safety lock, and user-friendly touch controls with a mess-free paddle dispenser. Suited for regular residential and office use.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Countertop',
+      dimensions: '10.2"W × 19"D × 19.9"H',
+      weight: '36.4 lbs (16.51 kg)',
+      filtration: 'Reverse osmosis (RO)',
+      capacity: 'Cold 1.0 gal, Hot 0.3 gal, Total 1.3 gal',
+      temperatures: 'Cold, Hot',
+      certifications: 'FCC, cETL',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -118,9 +155,18 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/CP-KN501HW-01.png?v=1746119816',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/products/CP-KN501HW2.jpg?v=1746143001',
     ],
-    description: 'Compact countertop design with a smart wheel for precise temperature control. Dispenses hot, cold, and room-temperature water across seven selectable temperature settings. Features a stainless steel tank, hot water safety lock, and mess-free paddle dispenser.',
+    description: 'Compact countertop design with a smart wheel for precise temperature control across seven selectable settings. Dispenses hot, cold, and room-temperature water via a mess-free paddle dispenser. Stainless steel tank, hot water safety lock, and compact footprint suited for any kitchen.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Countertop',
+      dimensions: '8.7"W × 19.4"D × 19.3"H',
+      weight: '30 lbs (13.6 kg)',
+      capacity: 'Cold/Room 0.3 gal, Hot 0.3 gal, Total 0.6 gal',
+      temperatures: 'Cold, Room temperature, Hot (7 settings)',
+      certifications: 'FCC, cETL',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -143,9 +189,18 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/P-1-05.jpg?v=1773079339',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/P-1-07.jpg?v=1773079339',
     ],
-    description: '',
+    description: 'Slim tankless countertop purifier delivering hot, cold, and room-temperature water on demand. Compact stainless steel water lines and a high-efficiency inverter compressor provide rapid cooling and energy savings. One-touch display with five hot water temperature levels. Smart voice navigation guides operation and alerts for filter replacement. Tool-free filter replacement.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Countertop',
+      dimensions: '6.7"W × 18.4"D × 16"H',
+      weight: '23.14 lbs (10.5 kg)',
+      capacity: 'Direct water supply (tankless)',
+      temperatures: 'Cold, Room temperature, Hot (5 levels)',
+      certifications: 'FCC, cETL',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -167,9 +222,18 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/TN-06.jpg?v=1773079430',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/TN-05.jpg?v=1773079430',
     ],
-    description: '',
+    description: 'Tankless countertop purifier with six temperature settings from 40°C to full 100°C boiling. A built-in boiling chamber at the spout delivers true boiling-point water, ideal for instant noodles, tea, and cooking. 4-way moving spout adjusts height for tall or short containers. Tool-free filter replacement.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Countertop',
+      dimensions: '6.5"W × 20.2"D × 15.7"H',
+      weight: '24.25 lbs (11 kg)',
+      capacity: 'Direct water supply (tankless)',
+      temperatures: 'Cold, Room temperature, Hot, Boiling Hot (100°C, 6 settings)',
+      certifications: 'FCC, cETL',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -191,9 +255,18 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/W-en_05.png',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/W-en_06.png',
     ],
-    description: 'Industry-leading filter technology paired with a smart wheel for precise temperature adjustment. Features one-touch self-cleaning, compact countertop form, stainless steel tank, hot water safety lock, and seven selectable temperature settings with a mess-free paddle dispenser.',
+    description: 'Industry-leading filter technology paired with a smart wheel for precise temperature adjustment across seven settings. Features one-touch self-cleaning, compact countertop form, stainless steel tank, hot water safety lock, and a mess-free paddle dispenser.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Countertop',
+      dimensions: '10.2"W × 20"D × 20"H',
+      weight: '31.5 lbs (14.3 kg)',
+      capacity: 'Room 1.0 L, Cold 2.8 L, Hot 1.4 L, Total 5.2 L',
+      temperatures: 'Cold, Room temperature, Hot (7 settings)',
+      certifications: 'FCC, cETL',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -215,9 +288,18 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/W-en_05.png?v=1754506688',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/W-en_06.png?v=1754506688',
     ],
-    description: 'Freestanding version of the Smart Wheel + One-Touch Cleaning Water Purifier. Smart wheel temperature control, one-touch self-cleaning, stainless steel construction, hot water safety lock, and seven temperature settings via a mess-free paddle dispenser.',
+    description: 'Freestanding version of the Smart Wheel + One-Touch Cleaning Water Purifier. Smart wheel temperature control, one-touch self-cleaning, stainless steel tank, hot water safety lock, and seven temperature settings via a mess-free paddle dispenser.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Freestanding',
+      dimensions: '10.2"W × 20"D × 45"H',
+      weight: '44.7 lbs (20.3 kg)',
+      capacity: 'Room 1.0 L, Cold 2.8 L, Hot 2.5 L, Total 6.3 L',
+      temperatures: 'Cold, Room temperature, Hot (7 settings)',
+      certifications: 'FCC, cETL',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -241,9 +323,18 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/Artboard3_d8aa423d-0c82-452b-b823-b36e7fbe9451.jpg?v=1746142989',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/products/CP-QN1401SW_03.jpg?v=1746142989',
     ],
-    description: 'Large-capacity freestanding purifier with a 14.1L stainless steel tank. Automatic power adjustment via light detection technology. Dispenses hot, cold, or room-temperature water via touch controls with a paddle dispenser and water level display.',
+    description: 'Large-capacity freestanding purifier with a 14.1-liter stainless steel tank. Power-saving energy eye detects ambient light and automatically adjusts power consumption. Dispenses hot, cold, or room-temperature water via touch controls with a paddle dispenser and real-time water level display.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Freestanding',
+      dimensions: '14.2"W × 19.5"D × 53.1"H',
+      weight: '63.1 lbs (28.6 kg)',
+      capacity: 'Cold/Room 2.7 gal, Hot 1.1 gal, Total 3.8 gal (14.1 L)',
+      temperatures: 'Cold, Room temperature, Hot',
+      certifications: 'FCC, cETL',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -266,9 +357,18 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/Artboard6.jpg?v=1752254704',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/Artboard5.jpg?v=1752254704',
     ],
-    description: 'Freestanding reverse osmosis water purifier. Advanced RO filtration for comprehensive water quality treatment, dispensing hot, cold, and room-temperature water.',
+    description: 'Freestanding reverse osmosis water purifier with a 6-liter tank. Advanced RO filtration for comprehensive water quality treatment. Dispenses hot, cold, and room-temperature water with a real-time water level indicator and hot water safety lock.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Freestanding',
+      dimensions: '10.2"W × 19"D × 19.9"H',
+      weight: '36.4 lbs (16.51 kg)',
+      filtration: 'Reverse osmosis (RO)',
+      capacity: 'Cold 2 L, Hot 2.5 L, Total 6 L',
+      temperatures: 'Cold, Room temperature, Hot',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -289,6 +389,7 @@ export const products = [
     description: '',
     badge: null,
     tags: ['installation-service'],
+    specs: {},
   },
 
   {
@@ -310,9 +411,16 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/07_c8f35e41-546c-4930-8249-47011aedb95b.jpg?v=1757451739',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/08_03aa7d2c-9f57-425e-b98f-08c6c8f7f6dc.jpg?v=1757451739',
     ],
-    description: '',
+    description: 'Countertop water purifier with an integrated coffee system. Separate engineered systems for purified water and coffee allow precision control over brew temperature, concentration, and flow. Motion and ambient light sensors auto-activate the hidden display to reduce energy consumption. Direct water line connection with no storage tank.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Countertop',
+      filtration: 'Nano+ (Nano Positive Plus)',
+      capacity: 'Direct water supply (tankless)',
+      temperatures: 'Cold, Hot',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -333,9 +441,19 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/SN-04.jpg?v=1744387613',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/SN-05.jpg?v=1744387613',
     ],
-    description: '',
+    description: 'Countertop water purifier dispensing water at five temperature settings — including 100°C boiling — with a built-in ice maker. Produces up to 96 glasses of ice cold drinks daily with ice ready in approximately 12 minutes. 3-stage Nano+ filtration with self-cleaning electrolysis technology and one-touch filter replacement.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      type: 'Countertop',
+      dimensions: '10.2"W × 20.8"D × 19.9"H',
+      weight: '48.5 lbs (22 kg)',
+      filtration: 'Nano+ (3-stage: Sediment 3.0, Carbon Composite, Nano Positive Plus 3.0)',
+      capacity: 'Direct water supply + ice storage 1.54 lbs',
+      temperatures: 'Ice, Cold, Room temperature, Hot, Boiling Hot (100°C, 6 settings)',
+      certifications: 'FCC, cETL',
+      madeIn: 'South Korea',
+    },
   },
 
   {
@@ -358,9 +476,16 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/CP-ACR1620-4.png?v=1767750552',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/CP-ACR1620-2.png?v=1767750552',
     ],
-    description: 'Generates up to 1,185 pieces of ice per day with fresh batches every 17 minutes. Features a 10.7-inch elevated outlet, 212°F hot water storage, and four dispensing modes: cold, hot, room temperature, and ice. LED display monitors water and ice status.',
+    description: 'Generates up to 1,185 pieces of ice per day with fresh batches every 17 minutes. Features a 10.7-inch elevated outlet, 212°F hot water storage, and four dispensing modes: cold, hot, room temperature, and ice. Automatic dual cleaning cycle every 5 days. LED display monitors water and ice status.',
     badge: null,
     tags: [],
+    specs: {
+      type: 'Freestanding',
+      filtration: 'Reverse osmosis (RO), 4-stage',
+      capacity: 'Cold 6 L, Hot/Room 4 L',
+      temperatures: 'Cold, Room temperature, Hot (up to 212°F), Ice',
+      madeIn: 'South Korea',
+    },
   },
 
   // ─── AIR PURIFIERS ──────────────────────────────────────────────────────────
@@ -385,9 +510,16 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/C-06.jpg?v=1744388182',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/C-07.jpg?v=1744388182',
     ],
-    description: 'Optimized and efficient air purification with automatic room-size detection, a dust sensor, and real-time 6-color LED air quality indicators. Whisper-quiet operation with a dedicated baby mode. Real-time air quality analysis runs continuously.',
+    description: 'Smart air purifier with automatic room-size detection and a dust sensor for continuous real-time air quality analysis. 6-color LED indicator displays pollution levels at a glance. Whisper-quiet operation with a dedicated baby sleep mode. 4-stage filtration including True HEPA H14.',
     badge: null,
     tags: ['air-purifier'],
+    specs: {
+      dimensions: '16.9"W × 10.9"D × 21.7"H',
+      weight: '16.31 lbs (7.4 kg)',
+      filtration: '4-stage: Pre-filter, Harmful Gas Filter, Deodorizing Filter, True HEPA H14',
+      coverage: 'Up to 310 sq ft (15 min) / 621 sq ft (30 min)',
+      certifications: 'FCC',
+    },
   },
 
   {
@@ -409,9 +541,16 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/AA-05.jpg?v=1744388215',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/AA-06.jpg?v=1744388215',
     ],
-    description: 'Space-efficient design that mounts to the wall or stands independently. Ideal for compact areas, schools, and daycare facilities. Features three-stage color lighting for real-time air quality monitoring and comprehensive filter maintenance system. Operable via touch or remote.',
+    description: 'Ultra-slim purifier that mounts to the wall or stands independently. CO2 and fine dust sensors provide real-time air quality data with a 3-level color indicator. All-in-one filter design simplifies replacement. Operable via touch panel or included remote. Suited for compact spaces, schools, and daycare facilities.',
     badge: null,
     tags: ['air-purifier'],
+    specs: {
+      dimensions: '23"W × 4.5"D × 16"H',
+      weight: '11.4 lbs (5.2 kg)',
+      filtration: 'All-in-one: Pre-filter, True HEPA H13, Deodorization filter',
+      coverage: 'Up to 340 sq ft',
+      certifications: 'FCC, cFTLus',
+    },
   },
 
   {
@@ -430,9 +569,16 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/D-03.jpg?v=1746490700',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/D-04.jpg?v=1746490700',
     ],
-    description: '360-Degree Automatic Air Analysis and Purification with 8,200 air purification pores for comprehensive room coverage. Effectively removes pet dander. All-in-one filters for simplified replacement. Stable base with portability.',
+    description: '360-degree purification tower with 8,200 air intake pores for comprehensive room coverage. AI-powered auto space detection and 6-stage smart purification sensor continuously analyze and respond to air quality. 4-stage filtration with True HEPA H14. 3-stage detachable structure for simplified filter replacement. Effectively removes pet dander.',
     badge: null,
     tags: ['air-purifier'],
+    specs: {
+      dimensions: '15.6"W × 15.6"D × 29.7"H',
+      weight: '24.25 lbs (11 kg)',
+      filtration: '4-stage: Pre-Filter, Allergen Filter, True HEPA H14, Active Carbon Deodorization Filter',
+      coverage: 'Up to 635 sq ft (15 min) / 1,270 sq ft (30 min)',
+      certifications: 'FCC, cFTLus, AHAM',
+    },
   },
 
   {
@@ -453,21 +599,28 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/F-04.jpg?v=1744388028',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/F-05.jpg?v=1744388028',
     ],
-    description: '360° air purification system with no blind spots. 12,250 air filtration pores enable surround intake. High-powered BLDC motor, dual air pollution sensors, 4-stage filtration, and a 3-way detachable structure for simplified maintenance. Intelligent automated air analysis and purification in real time.',
+    description: '360° air purification system with 12,250 air filtration pores for surround intake with no blind spots. High-powered BLDC motor, dual air pollution sensors with TVOC mode, 4-stage filtration, and an 8-stage smart clean sensor. 3-way detachable structure simplifies filter maintenance.',
     badge: null,
     tags: ['air-purifier'],
+    specs: {
+      dimensions: '16.1"W × 16.1"D × 35.2"H',
+      weight: '30.86 lbs (14 kg)',
+      filtration: '4-stage: Pre-filter, Allergen Filter, True HEPA H13, Active Carbon Deodorization Filter',
+      coverage: 'Up to 1,094 sq ft',
+      certifications: 'FCC, cFTLus, AHAM',
+    },
   },
 
   {
     slug: 'inspure-heritage-air-purifier',
     name: 'Inspure Heritage Air Purifier',
-    model: null,
+    model: 'CAC-AH2810FNW',
     category: 'air',
     productUrl: 'https://cuckoorental.com/products/inspure-heritage-air-purifier',
     price: 1299,
     comparePrice: 1299,
     variants: [
-      { title: 'Default Title', sku: null, price: 1299, comparePrice: 1299, available: true },
+      { title: 'Default Title', sku: 'CAC-AH2810FNW', price: 1299, comparePrice: 1299, available: true },
     ],
     images: [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/AH01_1.png',
@@ -480,9 +633,16 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/AH-03.png',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/AH-04.png',
     ],
-    description: '360° air purification system with 12,250 air filtration pores for enhanced efficiency. High-powered BLDC motor, dual air pollution sensors, and a 4-stage filtration system designed to eliminate ultrafine dust. Intelligent, automated air analysis and purification monitors pollution levels in real time. 3-way detachable structure for simplified maintenance.',
+    description: '360° air purification system with 12,250 air filtration pores and a high-powered BLDC motor. Dual air quality sensors monitor ultrafine dust and harmful chemicals in real time. Totalcare True HEPA H13 filtration. Intelligent automated air analysis with 3-way detachable structure for simplified maintenance.',
     badge: null,
     tags: ['air-purifier'],
+    specs: {
+      dimensions: '12.6"W × 13.7"D × 34.6"H',
+      weight: '33 lbs (15 kg)',
+      filtration: 'Pre-Filter, Totalcare True HEPA H13',
+      coverage: 'Up to 996 sq ft',
+      certifications: 'FCC, cFTLus, CARB, EPA, AHAM',
+    },
   },
 
   // ─── BIDETS ─────────────────────────────────────────────────────────────────
@@ -507,9 +667,13 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/IS-05.jpg?v=1763748281',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/IS-06.jpg?v=1763748281',
     ],
-    description: 'Instant heating bidet with a 3-in-1 self-cleaning stainless steel nozzle. Features adaptive water pressure, intuitive remote controls, air drying, massage function, and seat temperature adjustment. Available in E-Type (elongated) and R-Type (round) to fit your toilet.',
+    description: 'Instant heating bidet with a full stainless steel 3-in-1 self-cleaning nozzle. 13-step automatic pressure and movement adjustment over two minutes. Features adaptive water pressure, air drying, massage function, and seat temperature adjustment. Available in E-Type (elongated) and R-Type (round) to fit your toilet.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      fits: 'Elongated (E-Type) or Round (R-Type) toilet seats',
+      nozzle: 'Stainless steel 3-in-1 self-cleaning nozzle',
+    },
   },
 
   {
@@ -531,9 +695,14 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/I1-06_c0820087-acc7-4547-89a5-1b4e0d5c5a77.jpg?v=1763747977',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/I003-2_5579b00e-d3f2-4cb2-badc-0b3bfae6eb2c.png?v=1768328968',
     ],
-    description: 'Remote-controlled bidet for elongated toilet seats with three cleaning modes: rear wash, feminine wash, and turbo wash via a 3-in-1 stainless steel nozzle with adjustable positioning. Instant heating technology, customizable water temperature and pressure, seat warmth, and air-drying. Only 660W for energy efficiency. DIY-friendly installation with BILT 3D interactive instructions.',
+    description: 'Remote-controlled electric bidet for elongated toilet seats with three cleaning modes via a stainless steel 3-in-1 nozzle: rear wash, feminine wash, and turbo wash. Instant heating with customizable water temperature, pressure, seat warmth, and air drying. 660W for energy efficiency. DIY-friendly installation with BILT 3D interactive instructions.',
     badge: null,
     tags: [],
+    specs: {
+      fits: 'Elongated toilet seats',
+      nozzle: 'Stainless steel 3-in-1 nozzle (rear wash, feminine wash, turbo wash)',
+      certifications: 'IPX5 waterproof',
+    },
   },
 
   // ─── BUBBLE CLEANSER ─────────────────────────────────────────────────────────
@@ -555,9 +724,15 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/products/CWS-AO201W_04.jpg?v=1770683776',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/products/CWS-AO201W_05.jpg?v=1770683776',
     ],
-    description: 'Uses microbubbles smaller than tap water particles to cleanse pores without added chemicals. A shower-integrated cleanser designed for daily skin and hair care.',
+    description: 'Shower-integrated micro-bubble cleanser that uses air and water pressure to generate microbubbles smaller than tap water particles. Penetrates and cleanses pores, removing fine dust and impurities without added chemicals. Five bubble intensity levels and three water pressure levels via an adjustable showerhead.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      dimensions: '8.2"W × 16.8"D × 5.9"H',
+      weight: '3.96 lbs (1.8 kg)',
+      bubbleIntensity: '5 levels',
+      waterPressure: '3 levels',
+    },
   },
 
   // ─── MASSAGE CHAIRS ─────────────────────────────────────────────────────────
@@ -584,9 +759,16 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/CMS-D10SLGB-dimension-en.png?v=1746220924',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/CMS-D10SLGB-Renature-en.png?v=1746220924',
     ],
-    description: '',
+    description: 'Full-body 3D massage chair with smart body scan for personalized treatment. Thirty-one premium airbags and four rear safety sensors provide comprehensive coverage. Programs target muscle pain, stiffness, sports injuries, hypertension, and lower back tension. Requires 11.8 inches of wall clearance when reclining.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      dimensionsUpright: '59.1"L × 29.9"W × 44.9"H',
+      dimensionsReclined: '70.5"L × 29.9"W × 35.4"H',
+      weight: '169.8 lbs (77 kg)',
+      airbags: '31',
+      wallClearance: '11.8 inches required',
+    },
   },
 
   {
@@ -612,9 +794,17 @@ export const products = [
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/CMS-E410CP-dimension-en.png?v=1746220862',
       'https://cdn.shopify.com/s/files/1/0727/8936/0944/files/CMS-E410CP-Renature.png?v=1746220862',
     ],
-    description: '',
+    description: 'Full-body 4D massage chair with an SL-Track roller system covering neck to buttocks. Three-stage zero gravity mode and 7-depth air intensity adjustment. Includes a built-in Bluetooth speaker and touch screen remote. Two rear detection sensors and two safety switches.',
     badge: null,
     tags: ['installation-service'],
+    specs: {
+      dimensionsUpright: '61.0"L × 29.9"W × 48.0"H',
+      dimensionsReclined: '76.0"L × 29.9"W × 42.7"H',
+      weight: '237.4 lbs (107.7 kg)',
+      track: 'SL-Track (neck to buttocks)',
+      zeroGravity: '3-stage',
+      airIntensity: '7 levels',
+    },
   },
 ]
 
