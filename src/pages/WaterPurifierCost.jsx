@@ -1,21 +1,46 @@
 import { Link } from 'react-router-dom'
 import Seo from '../seo/Seo'
-import { createArticleSchema, createBreadcrumbSchema } from '../seo/site'
+import { createArticleSchema, createBreadcrumbSchema, createFAQSchema } from '../seo/site'
 
 // ── Stable module-level references ───────────────────────────────────────────
 const articleSchema = createArticleSchema({
-  headline: 'Water Purifier Cost: What You Should Expect to Pay',
+  headline: 'Water Purifier Cost: Full Price Breakdown',
   description:
     'A clear breakdown of water purifier costs — from cheap filters to premium systems and rental plans — so you can make a confident decision for your home.',
   path: '/water-purifier-cost',
   publishedAt: '2026-04-23',
-  updatedAt: '2026-04-23',
+  updatedAt: '2026-04-30',
 })
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: 'Home', path: '/' },
   { name: 'Water Purifier Cost', path: '/water-purifier-cost' },
 ])
-const SCHEMA = [articleSchema, breadcrumbSchema]
+
+const FAQ_ITEMS = [
+  {
+    q: 'How much does a water purifier cost per month?',
+    a: 'Rental plans for premium water purification systems typically run $30–$80 per month depending on the system and plan tier. This usually includes the system, filter replacements, maintenance, and service support — making the monthly cost the full cost, with no separate bills for servicing.',
+  },
+  {
+    q: 'Is it cheaper to rent or buy a water purifier?',
+    a: 'Over a long enough period, buying can appear cheaper on paper, but the comparison depends on what you include. Owned systems require separate spending on filter replacements, maintenance, and eventual repairs. Rental plans bundle all of these into a predictable monthly rate with a lower barrier to entry. For households that want a premium system without managing the upkeep, renting often makes more practical sense.',
+  },
+  {
+    q: 'What is included in a water purifier rental plan?',
+    a: 'CUCKOO rental plans include the water purification system, scheduled filter replacements, routine maintenance, and service support. In select areas, professional installation is also included. The monthly fee covers the system and its ongoing care — there are no separate charges for standard servicing.',
+  },
+  {
+    q: 'How does the cost of a water purifier compare to bottled water?',
+    a: 'A household regularly purchasing bottled water can spend significantly more per month than a rental plan for a premium purification system. Beyond the dollar comparison, bottled water also involves recurring inconvenience — storage, running out, and plastic waste — that a home system eliminates.',
+  },
+  {
+    q: 'Are there hidden costs with water purifiers?',
+    a: 'With owned systems, yes. Filter replacements, routine maintenance, and repairs after the warranty period are common costs that buyers underestimate when comparing upfront prices. With a managed rental plan, these are included in the monthly rate, making the total cost of ownership more predictable.',
+  },
+]
+
+const faqSchema = createFAQSchema(FAQ_ITEMS)
+const SCHEMA = [articleSchema, breadcrumbSchema, faqSchema]
 
 const HERO_GRADIENT = {
   background:
@@ -38,8 +63,8 @@ export default function WaterPurifierCost() {
   return (
     <div className="pt-16">
       <Seo
-        title="Water Purifier Cost: What You Should Expect to Pay"
-        description="A clear breakdown of water purifier costs — basic filters, premium systems, and rental plans — so you can choose confidently without overpaying or under-buying."
+        title="Water Purifier Cost: Full Price Breakdown"
+        description="What does a water purifier actually cost? Compare filters, premium systems, and rental plans — including hidden costs most people miss — and find the right fit."
         path="/water-purifier-cost"
         keywords="water purifier cost, how much does a water purifier cost, water purifier price, water filter rental cost, CUCKOO water purifier price, water purifier vs bottled water cost"
         schema={SCHEMA}
@@ -527,6 +552,21 @@ export default function WaterPurifierCost() {
               >
                 See service area
               </Link>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="bg-white border border-border rounded-2xl p-6">
+            <h2 className="text-xl font-semibold text-charcoal mb-5">
+              Frequently asked questions
+            </h2>
+            <div className="space-y-5">
+              {FAQ_ITEMS.map((item) => (
+                <div key={item.q} className="border-t border-border pt-5 first:border-t-0 first:pt-0">
+                  <h3 className="text-base font-semibold text-charcoal mb-2">{item.q}</h3>
+                  <p className="text-sm text-charcoal-muted leading-relaxed">{item.a}</p>
+                </div>
+              ))}
             </div>
           </section>
 

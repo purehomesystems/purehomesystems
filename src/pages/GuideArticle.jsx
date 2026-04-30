@@ -286,7 +286,7 @@ export default function GuideArticle() {
                       <p className="text-sm text-charcoal-muted leading-relaxed">{relatedGuide.excerpt}</p>
                       <div className="pt-2 border-t border-border">
                         <Link to={`/guides/${relatedGuide.slug}`} className="text-sm text-charcoal hover:underline">
-                          Read related guide
+                          Read: {relatedGuide.title}
                         </Link>
                       </div>
                     </article>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Seo from '../seo/Seo'
-import { createArticleSchema, createBreadcrumbSchema } from '../seo/site'
+import { createArticleSchema, createBreadcrumbSchema, createFAQSchema } from '../seo/site'
 import { getGuideBySlug } from '../data/guides'
 
 const guide = getGuideBySlug('best-water-purifier-for-home')
@@ -18,7 +18,31 @@ const breadcrumbSchema = createBreadcrumbSchema([
   { name: 'Home', path: '/' },
   { name: 'Best Water Purifier for Home', path: '/best-water-purifier-for-home' },
 ])
-const SCHEMA = [articleSchema, breadcrumbSchema]
+const FAQ_ITEMS = [
+  {
+    q: 'What is the best water purifier for home use?',
+    a: 'For most homes, a reverse osmosis (RO) system provides the most thorough filtration — removing dissolved solids, heavy metals, and contaminants that carbon filters leave behind. The right form factor depends on your space: countertop units suit smaller households and renters, while under-sink and freestanding systems work well for families. A managed rental plan can give you access to a premium RO system without the upfront cost.',
+  },
+  {
+    q: 'How much does a home water purifier cost?',
+    a: 'Costs vary widely. Basic pitcher filters run $50–$200. Standard countertop or under-sink systems range from $200–$800. Premium systems with multi-stage filtration and hot/cold dispensing can reach $800–$2,000 or more. Rental plans for premium systems typically run $30–$80 per month and include filters, maintenance, and service support. See our full water purifier cost breakdown for a detailed comparison.',
+  },
+  {
+    q: 'Is it better to buy or rent a water purifier?',
+    a: 'Both approaches work, but they suit different priorities. Buying means higher upfront cost and you manage all maintenance yourself — filter replacements, servicing, and repairs. Renting a premium system through a plan typically includes filters, maintenance, and support at a predictable monthly rate. Most households find the managed model simpler, especially for systems that require regular servicing.',
+  },
+  {
+    q: 'How often do water purifier filters need to be replaced?',
+    a: 'Filter replacement schedules depend on the system and your water usage and quality. Multi-stage systems have different filters at different stages, each with its own lifespan. With a managed rental plan, filter replacements are scheduled and handled for you — you do not need to track or order them separately.',
+  },
+  {
+    q: 'Do I need a professional to install a water purifier?',
+    a: 'It depends on the system type. Countertop and most freestanding systems require no plumbing and can be set up without a technician. Under-sink systems and those that connect directly to your water line benefit from professional installation. With a CUCKOO rental plan, professional installation is included in select service areas.',
+  },
+]
+
+const faqSchema = createFAQSchema(FAQ_ITEMS)
+const SCHEMA = [articleSchema, breadcrumbSchema, faqSchema]
 
 const HERO_GRADIENT = {
   background:
@@ -575,6 +599,21 @@ export default function BestWaterPurifierForHome() {
               >
                 See service area
               </Link>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="bg-white border border-border rounded-2xl p-6">
+            <h2 className="text-xl font-semibold text-charcoal mb-5">
+              Frequently asked questions
+            </h2>
+            <div className="space-y-5">
+              {FAQ_ITEMS.map((item) => (
+                <div key={item.q} className="border-t border-border pt-5 first:border-t-0 first:pt-0">
+                  <h3 className="text-base font-semibold text-charcoal mb-2">{item.q}</h3>
+                  <p className="text-sm text-charcoal-muted leading-relaxed">{item.a}</p>
+                </div>
+              ))}
             </div>
           </section>
 
