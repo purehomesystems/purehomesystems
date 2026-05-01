@@ -333,6 +333,7 @@ export default function WaterPurifierCost() {
             <div className="flex flex-col gap-2">
               {[
                 { to: '/best-water-purifier-for-home', label: 'Best Water Purifier for Home: complete buying guide' },
+                { to: '/under-sink-vs-countertop-water-filter', label: 'Under Sink vs Countertop Water Filter: full comparison' },
                 { to: '/guides/types-of-water-purifiers', label: 'Types of Water Purifiers: A Complete Comparison' },
                 { to: '/guides/water-purifier-vs-water-filter', label: 'Water Purifier vs Water Filter: What Is the Difference?' },
               ].map((link) => (

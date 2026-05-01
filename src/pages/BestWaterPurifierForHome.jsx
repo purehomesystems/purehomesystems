@@ -103,32 +103,44 @@ function GuideSection({ section, index }) {
 
         {/* Section 5 (Recommended Systems): render as cards instead of a plain list */}
         {index === 5 && section.bullets ? (
-          <div className="grid sm:grid-cols-2 gap-4 mt-2">
-            {RECOMMENDED_CARDS.map((card) => (
-              <div
-                key={card.label}
-                className="bg-white border border-border rounded-2xl p-5 flex flex-col gap-3"
-              >
-                <div>
-                  <p className="section-label mb-1">{card.tag}</p>
-                  <p className="text-base font-semibold text-charcoal leading-snug">
-                    {card.label}
+          <>
+            <div className="grid sm:grid-cols-2 gap-4 mt-2">
+              {RECOMMENDED_CARDS.map((card) => (
+                <div
+                  key={card.label}
+                  className="bg-white border border-border rounded-2xl p-5 flex flex-col gap-3"
+                >
+                  <div>
+                    <p className="section-label mb-1">{card.tag}</p>
+                    <p className="text-base font-semibold text-charcoal leading-snug">
+                      {card.label}
+                    </p>
+                  </div>
+                  <p className="text-sm text-charcoal-muted leading-relaxed flex-1">
+                    {card.description}
                   </p>
+                  <div className="pt-3 border-t border-border">
+                    <Link
+                      to="/products?category=water"
+                      className="text-sm font-medium text-charcoal hover:underline underline-offset-2"
+                    >
+                      View options &rarr;
+                    </Link>
+                  </div>
                 </div>
-                <p className="text-sm text-charcoal-muted leading-relaxed flex-1">
-                  {card.description}
-                </p>
-                <div className="pt-3 border-t border-border">
-                  <Link
-                    to="/products?category=water"
-                    className="text-sm font-medium text-charcoal hover:underline underline-offset-2"
-                  >
-                    View options &rarr;
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+            <p className="text-sm text-charcoal-muted leading-relaxed">
+              Deciding between form factors? See our detailed breakdown of{' '}
+              <Link
+                to="/under-sink-vs-countertop-water-filter"
+                className="font-medium text-charcoal hover:underline underline-offset-2"
+              >
+                under sink vs countertop water filters
+              </Link>
+              , including installation, cost, and which suits renters vs homeowners.
+            </p>
+          </>
         ) : (
           section.bullets && (
             <ul className="space-y-2.5 pl-5 list-disc text-charcoal-muted">
@@ -458,6 +470,12 @@ export default function BestWaterPurifierForHome() {
                     {link.label}
                   </Link>
                 ))}
+                <Link
+                  to="/under-sink-vs-countertop-water-filter"
+                  className="text-sm text-charcoal-muted hover:text-charcoal transition-colors leading-snug"
+                >
+                  Under Sink vs Countertop Water Filter: full side-by-side comparison
+                </Link>
               </div>
             </div>
           )}

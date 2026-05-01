@@ -136,6 +136,30 @@ export default function Guides() {
                       </div>
                     </article>
                   ))}
+                  {topic.id === 'water' && (
+                    <article className="card flex flex-col gap-4 h-full">
+                      <div className="flex items-center justify-between gap-3">
+                        <p className="section-label">10 min read</p>
+                        <p className="text-xs text-charcoal-muted">Updated Apr 2026</p>
+                      </div>
+                      <h3 className="text-xl font-semibold text-charcoal leading-tight line-clamp-2">
+                        <Link
+                          to="/under-sink-vs-countertop-water-filter"
+                          className="hover:underline underline-offset-2"
+                        >
+                          Under Sink vs Countertop Water Filter
+                        </Link>
+                      </h3>
+                      <p className="text-sm text-charcoal-muted leading-relaxed line-clamp-3">
+                        A direct comparison of under sink and countertop water filters across installation, cost, space requirements, and which setup suits your home.
+                      </p>
+                      <div className="pt-3 border-t border-border flex items-center justify-end mt-auto">
+                        <Link to="/under-sink-vs-countertop-water-filter" className="btn-secondary text-sm px-4 py-2">
+                          Read guide
+                        </Link>
+                      </div>
+                    </article>
+                  )}
                 </div>
                 {topic.id === 'water' && (
                   <p className="mt-4 text-sm text-charcoal-muted">
