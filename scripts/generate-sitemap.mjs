@@ -22,6 +22,7 @@ const staticRoutes = [
 const landingRoutes = [
   '/best-water-purifier-for-home',
   '/water-purifier-cost',
+  '/under-sink-vs-countertop-water-filter',
 ]
 
 const productRoutes = products.map((product) => `/products/${product.slug}`)

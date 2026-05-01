@@ -19,6 +19,7 @@ const EditorialPolicy = lazy(() => import('./pages/EditorialPolicy'))
 const InstallationAvailability = lazy(() => import('./pages/InstallationAvailability'))
 const BestWaterPurifierForHome = lazy(() => import('./pages/BestWaterPurifierForHome'))
 const WaterPurifierCost = lazy(() => import('./pages/WaterPurifierCost'))
+const UnderSinkVsCountertop = lazy(() => import('./pages/UnderSinkVsCountertop'))
 
 function ScrollToTop() {
   const { pathname, search } = useLocation()
@@ -69,6 +70,7 @@ function Layout() {
             <Route path="/installation-availability" element={<InstallationAvailability />} />
             <Route path="/best-water-purifier-for-home" element={<BestWaterPurifierForHome />} />
             <Route path="/water-purifier-cost" element={<WaterPurifierCost />} />
+            <Route path="/under-sink-vs-countertop-water-filter" element={<UnderSinkVsCountertop />} />
           </Routes>
         </Suspense>
       </main>
