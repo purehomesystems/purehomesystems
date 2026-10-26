@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { lazy, Suspense, useEffect, useLayoutEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
@@ -83,6 +84,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Layout />
+      <Analytics />
     </BrowserRouter>
   )
 }
