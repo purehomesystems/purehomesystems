@@ -2,8 +2,8 @@
   "version": 1,
   "sourceUrl": "https://cuckoorental.com/pages/promotion",
   "sourceHeadline": "Current promotions",
-  "syncedAt": "2026-05-01T03:21:57.720Z",
-  "lastSuccessfulSyncAt": "2026-05-01T03:21:57.720Z",
+  "syncedAt": "2026-10-26T05:20:43.767Z",
+  "lastSuccessfulSyncAt": "2026-10-26T05:20:43.767Z",
   "syncStatus": "success",
   "stale": false,
   "message": "",
@@ -25,7 +25,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/pages/promotion",
       "ctaUrl": "/products",
-      "syncedAt": "2026-05-01T03:21:57.720Z"
+      "syncedAt": "2026-10-26T05:20:43.767Z"
     },
     {
       "id": "fit-water-purifier-sale-2026",
@@ -44,7 +44,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cp-mn031",
       "ctaUrl": "/products/fit-water-purifier",
-      "syncedAt": "2026-05-01T03:21:57.720Z"
+      "syncedAt": "2026-10-26T05:20:43.767Z"
     },
     {
       "id": "bidet-promotion-2026",
@@ -63,7 +63,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cbt-is1131",
       "ctaUrl": "/products/inspure-instant-heating-premium-bidet",
-      "syncedAt": "2026-05-01T03:21:57.720Z"
+      "syncedAt": "2026-10-26T05:20:43.767Z"
     },
     {
       "id": "room-care-air-purifier-sale-2026",
@@ -82,7 +82,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cac-c1020fw",
       "ctaUrl": "/products/room-care-smart-air-purifier",
-      "syncedAt": "2026-05-01T03:21:57.720Z"
+      "syncedAt": "2026-10-26T05:20:43.767Z"
     },
     {
       "id": "tower-max-air-purifier-sale-2026",
@@ -101,7 +101,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cac-d2020fw",
       "ctaUrl": "/products/tower-max-air-purifier",
-      "syncedAt": "2026-05-01T03:21:57.720Z"
+      "syncedAt": "2026-10-26T05:20:43.767Z"
     },
     {
       "id": "renature-3d-massage-chair-sale-2026",
@@ -120,7 +120,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cms-d10slgb",
       "ctaUrl": "/products/renature-3d-massage-chair",
-      "syncedAt": "2026-05-01T03:21:57.720Z"
+      "syncedAt": "2026-10-26T05:20:43.767Z"
     },
     {
       "id": "bubble-cleanser-sale-2026",
@@ -139,7 +139,7 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cws-ao201w",
       "ctaUrl": "/products/micro-bubble-cleanser",
-      "syncedAt": "2026-05-01T03:21:57.720Z"
+      "syncedAt": "2026-10-26T05:20:43.767Z"
     },
     {
       "id": "micro-bubble-cleanser-1",
@@ -157,7 +157,115 @@
       "status": "active",
       "sourceUrl": "https://cuckoorental.com/products/cws-ao201w",
       "ctaUrl": "/products/micro-bubble-cleanser",
-      "syncedAt": "2026-05-01T03:21:57.720Z"
+      "syncedAt": "2026-10-26T05:20:43.767Z"
+    },
+    {
+      "id": "steam-100-built-in-water-purifier-2",
+      "slug": "promotion-offer",
+      "title": "Promotion offer",
+      "sourceHeadline": "Current promotions",
+      "productName": "Steam 100 Built-in Water Purifier",
+      "category": "water",
+      "summary": "Promotion offer promotion focused on water purification. Listed offer pricing appears reduced from $19.00 to $37.99.",
+      "monthlyPrice": null,
+      "salePrice": "$37.99",
+      "regularPrice": "$19.00",
+      "promoType": "discounted-price",
+      "bestFor": "Homes prioritizing daily drinking-water convenience",
+      "status": "active",
+      "sourceUrl": "https://cuckoorental.com/products/steam-100-built-in-water-purifier",
+      "ctaUrl": "/products/steam-100-built-in-water-purifier",
+      "syncedAt": "2026-10-26T05:20:43.767Z"
+    },
+    {
+      "id": "promotion-offer-3",
+      "slug": "promotion-offer",
+      "title": "Promotion offer",
+      "sourceHeadline": "Current promotions",
+      "productName": "Promotion offer",
+      "category": "water",
+      "summary": "Promotion offer promotion focused on water purification. Listed offer pricing appears reduced from $19.00 to $37.99.",
+      "monthlyPrice": null,
+      "salePrice": "$37.99",
+      "regularPrice": "$19.00",
+      "promoType": "discounted-price",
+      "bestFor": "Homes prioritizing daily drinking-water convenience",
+      "status": "active",
+      "sourceUrl": "https://cuckoorental.com/products/cp-tn100",
+      "ctaUrl": "/products?category=water",
+      "syncedAt": "2026-10-26T05:20:43.767Z"
+    },
+    {
+      "id": "promotion-offer-4",
+      "slug": "promotion-offer",
+      "title": "Promotion offer",
+      "sourceHeadline": "Current promotions",
+      "productName": "Promotion offer",
+      "category": "water",
+      "summary": "Promotion offer promotion focused on water purification. Listed offer pricing appears reduced from $17.50 to $34.99.",
+      "monthlyPrice": null,
+      "salePrice": "$34.99",
+      "regularPrice": "$17.50",
+      "promoType": "discounted-price",
+      "bestFor": "Homes prioritizing daily drinking-water convenience",
+      "status": "active",
+      "sourceUrl": "https://cuckoorental.com/products/cp-sn102hw",
+      "ctaUrl": "/products?category=water",
+      "syncedAt": "2026-10-26T05:20:43.767Z"
+    },
+    {
+      "id": "inspure-heritage-air-purifier-5",
+      "slug": "promotion-offer",
+      "title": "Promotion offer",
+      "sourceHeadline": "Current promotions",
+      "productName": "Inspure Heritage Air Purifier",
+      "category": "air",
+      "summary": "Promotion offer promotion focused on air purification. Listed offer pricing appears reduced from $31.00 to $61.99.",
+      "monthlyPrice": null,
+      "salePrice": "$61.99",
+      "regularPrice": "$31.00",
+      "promoType": "discounted-price",
+      "bestFor": "Households focused on room-by-room air quality support",
+      "status": "active",
+      "sourceUrl": "https://cuckoorental.com/products/inspure-heritage-air-purifier",
+      "ctaUrl": "/products/inspure-heritage-air-purifier",
+      "syncedAt": "2026-10-26T05:20:43.767Z"
+    },
+    {
+      "id": "promotion-offer-6",
+      "slug": "promotion-offer",
+      "title": "Promotion offer",
+      "sourceHeadline": "Current promotions",
+      "productName": "Promotion offer",
+      "category": "water",
+      "summary": "Promotion offer promotion focused on water purification. Listed offer pricing appears reduced from $15.00 to $29.99.",
+      "monthlyPrice": null,
+      "salePrice": "$29.99",
+      "regularPrice": "$15.00",
+      "promoType": "discounted-price",
+      "bestFor": "Homes prioritizing daily drinking-water convenience",
+      "status": "active",
+      "sourceUrl": "https://cuckoorental.com/products/nano-signature-water-purifier",
+      "ctaUrl": "/products?category=water",
+      "syncedAt": "2026-10-26T05:20:43.767Z"
+    },
+    {
+      "id": "promotion-offer-7",
+      "slug": "promotion-offer",
+      "title": "Promotion offer",
+      "sourceHeadline": "Current promotions",
+      "productName": "Promotion offer",
+      "category": "water",
+      "summary": "Promotion offer promotion focused on water purification. Listed offer pricing appears reduced from $11.00 to $21.99.",
+      "monthlyPrice": null,
+      "salePrice": "$21.99",
+      "regularPrice": "$11.00",
+      "promoType": "discounted-price",
+      "bestFor": "Homes prioritizing daily drinking-water convenience",
+      "status": "active",
+      "sourceUrl": "https://cuckoorental.com/products/cp-mn031",
+      "ctaUrl": "/products?category=water",
+      "syncedAt": "2026-10-26T05:20:43.767Z"
     }
   ]
 }
